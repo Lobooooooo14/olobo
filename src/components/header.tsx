@@ -1,4 +1,5 @@
 import { SiGithub } from "@icons-pack/react-simple-icons"
+import { motion } from "framer-motion"
 import { MenuIcon, MoonIcon, SunIcon } from "lucide-react"
 
 import { useTheme } from "@/components/theme-provider"
@@ -10,52 +11,54 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger
 } from "@/components/ui/dropdown-menu"
+import { SheetClose, SheetTrigger } from "@/components/ui/sheet"
+
+import { cn } from "@/lib/utils"
 
 import avatar from "/avatar.png"
 
-const links: { id: number; name: string; path: string }[] = [
-  { id: 1, name: "Projetos", path: "/projects" },
-  { id: 2, name: "Contato", path: "/contact" }
+export type LinksType = { id: number; name: string; path: string }[]
+
+export const linksNavItems: LinksType = [
+  { id: 1, name: "Sobre", path: "#" },
+  { id: 2, name: "Projetos", path: "#" },
+  { id: 3, name: "Contato", path: "#" }
 ]
 
 export default function Header() {
   return (
-    <header className="w-full px-8 py-2 flex items-center justify-between gap-4 sticky z-50 top-0 backdrop-blur border-border/40 bg-background/95 supports-[backdrop-filter]:bg-background/60">
+    <motion.header
+      initial={{ opacity: 0, y: -60 }}
+      animate={{ opacity: 1, y: 0, transition: { delay: 1, duration: 0.4 } }}
+      className="sticky top-0 z-50 flex h-16 w-full items-center justify-between gap-4 border-border/40 bg-background/95 px-8 py-2 backdrop-blur supports-[backdrop-filter]:bg-background/60"
+    >
       <div className="flex items-center gap-4">
         <a
           href="/"
-          className="flex items-center gap-4 px-2 py-1 hover:bg-primary/10 rounded-lg transition-colors"
+          className="flex items-center gap-4 rounded-lg px-2 py-1 transition-colors hover:bg-primary/10"
         >
-          <Avatar>
+          <Avatar className="rounded-none rounded-br-sm">
             <AvatarImage src={avatar} alt="Lobo Avatar" />
             <AvatarFallback>L</AvatarFallback>
           </Avatar>
 
           <span className="text-lg font-normal">Lobo</span>
         </a>
-        <nav className="hidden sm:flex items-center gap-4 text-sm">
-          {links.map((link) => (
-            <a
-              href={link.path}
-              className="text-foreground/60 hover:text-foreground/80 transition-colors"
-              key={link.id}
-            >
-              {link.name}
-            </a>
-          ))}
-        </nav>
+        <Navbar />
       </div>
-      <div className="hidden sm:flex items-center gap-4">
+      <div className="hidden items-center gap-4 sm:flex">
         <ThemeToggle />
-        <Button variant="ghost" size="icon">
-          <SiGithub size={22} />
-        </Button>
+        <Buttons />
       </div>
-      <div className="sm:hidden flex items-center gap-4">
+      <div className="flex items-center gap-4 sm:hidden">
         <ThemeToggle />
-        <MenuIcon size={24} />
+        <SheetTrigger asChild>
+          <Button variant="ghost" size="icon">
+            <MenuIcon size={24} />
+          </Button>
+        </SheetTrigger>
       </div>
-    </header>
+    </motion.header>
   )
 }
 
@@ -83,5 +86,50 @@ function ThemeToggle() {
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
+  )
+}
+
+export interface NavbarProps extends React.HTMLAttributes<HTMLDivElement> {
+  mobile?: boolean
+}
+
+export function Navbar({ mobile = false, className, ...rest }: NavbarProps) {
+  return (
+    <nav
+      className={cn(
+        "flex flex-col items-center gap-4",
+        {
+          "hidden flex-row sm:flex": !mobile
+        },
+        className
+      )}
+      {...rest}
+    >
+      {linksNavItems.map((link) => (
+        <SheetClose asChild key={link.id}>
+          <a
+            href={link.path}
+            className="text-foreground/60 transition-colors hover:text-foreground/80"
+          >
+            {link.name}
+          </a>
+        </SheetClose>
+      ))}
+    </nav>
+  )
+}
+
+export function Buttons({
+  className,
+  ...rest
+}: React.HTMLAttributes<HTMLDivElement>) {
+  return (
+    <div className={cn("flex justify-center gap-4", className)} {...rest}>
+      <SheetClose asChild>
+        <Button variant="ghost" size="icon">
+          <SiGithub size={22} />
+        </Button>
+      </SheetClose>
+    </div>
   )
 }
