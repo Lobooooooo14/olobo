@@ -79,4 +79,8 @@
       linear-gradient(to bottom, hsl(var(--border) / 0.8) 1px, transparent 1px);
     mask-image: radial-gradient(circle at 50% 50%, black, transparent);
   }
+
+  .grid-icon-box {
+    @apply flex h-full min-h-12 w-full items-center justify-center p-4 sm:h-40 sm:w-40 md:h-48 md:w-48 lg:h-64 lg:w-64;
+  }
 }

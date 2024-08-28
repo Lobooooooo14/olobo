@@ -28,7 +28,7 @@ export default function Hero() {
             Olá, eu sou o Lobo
           </motion.h1>
           <motion.p
-            initial={{ opacity: 0, y: 100, letterSpacing: "0.5em" }}
+            initial={{ opacity: 0, y: 100, letterSpacing: "0.3em" }}
             animate={{
               opacity: 1,
               y: 0,
@@ -39,7 +39,7 @@ export default function Hero() {
                 ease: "easeInOut"
               }
             }}
-            className="text-md text-nowrap bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-center font-mono font-semibold uppercase tracking-widest text-transparent drop-shadow-[0_0_10px_rgba(34,211,238,0.2)]"
+            className="text-md text-nowrap bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-center font-mono font-bold uppercase tracking-widest text-transparent drop-shadow-[0_0_10px_rgba(34,211,238,0.2)]"
           >
             Desenvolvedor front-end
           </motion.p>

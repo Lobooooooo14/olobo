@@ -17,12 +17,12 @@ import { cn } from "@/lib/utils"
 
 import avatar from "/avatar.png"
 
-export type LinksType = { id: number; name: string; path: string }[]
+export type LinksType = { id: number; name: string; elementId: string }[]
 
 export const linksNavItems: LinksType = [
-  { id: 1, name: "Sobre", path: "#" },
-  { id: 2, name: "Projetos", path: "#" },
-  { id: 3, name: "Contato", path: "#" }
+  { id: 1, name: "Sobre", elementId: "about" },
+  { id: 2, name: "Projetos", elementId: "projects" },
+  { id: 3, name: "Contato", elementId: "contact" }
 ]
 
 export default function Header() {
@@ -107,12 +107,16 @@ export function Navbar({ mobile = false, className, ...rest }: NavbarProps) {
     >
       {linksNavItems.map((link) => (
         <SheetClose asChild key={link.id}>
-          <a
-            href={link.path}
-            className="text-foreground/60 transition-colors hover:text-foreground/80"
+          <span
+            onClick={() =>
+              document.getElementById(link.elementId)?.scrollIntoView({
+                behavior: "smooth"
+              })
+            }
+            className="cursor-pointer text-foreground/60 transition-colors hover:text-foreground/80"
           >
             {link.name}
-          </a>
+          </span>
         </SheetClose>
       ))}
     </nav>

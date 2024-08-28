@@ -13,7 +13,7 @@ import Hero from "./Hero"
 
 export default function Home() {
   return (
-    <main className="overflow-x-hidden">
+    <main>
       <Sheet>
         <SheetContent className="overflow-y-auto">
           <SheetHeader className="hidden">
