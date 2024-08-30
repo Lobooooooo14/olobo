@@ -10,6 +10,7 @@ import {
 
 import About from "./About"
 import Hero from "./Hero"
+import Projects from "./Projects"
 
 export default function Home() {
   return (
@@ -29,6 +30,7 @@ export default function Home() {
         <Header />
         <Hero />
         <About />
+        <Projects />
       </Sheet>
     </main>
   )

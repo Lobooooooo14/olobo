@@ -13,9 +13,8 @@ import {
 } from "@/components/ui/dropdown-menu"
 import { SheetClose, SheetTrigger } from "@/components/ui/sheet"
 
+import avatar from "@/assets/avatar.png"
 import { cn } from "@/lib/utils"
-
-import avatar from "/avatar.png"
 
 export type LinksType = { id: number; name: string; elementId: string }[]
 
