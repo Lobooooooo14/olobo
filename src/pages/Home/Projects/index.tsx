@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { useMediaQuery } from "react-responsive"
 
 import { IconType } from "@icons-pack/react-simple-icons"
 import { ExpandIcon, ExternalLinkIcon, TriangleAlertIcon } from "lucide-react"
@@ -8,7 +9,7 @@ import { useTheme } from "@/components/theme-provider"
 import { AspectRatio } from "@/components/ui/aspect-ratio"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { Card } from "@/components/ui/card"
+import { Card, CardContent, CardFooter } from "@/components/ui/card"
 import {
   Carousel,
   CarouselContent,
@@ -50,6 +51,8 @@ export default function Projects() {
   const theme = useTheme()
   const [disableReverseColors, setDisableReverseColors] = useState(false)
 
+  const isMedium = useMediaQuery({ query: "(max-width: 768px)" })
+
   return (
     <section id="projects" className="min-h-screen py-16">
       <div className="mb-6 flex w-full flex-col items-center">
@@ -64,7 +67,7 @@ export default function Projects() {
             align: "center"
           }}
         >
-          <CarouselContent>
+          <CarouselContent className="items-center">
             {projectsList.map((project) => (
               <CarouselItem key={project.id} className="basis-[90%]">
                 <Card>
@@ -81,11 +84,12 @@ export default function Projects() {
                             ? (project.poster.dark ?? project.poster.src)
                             : (project.poster.light ?? project.poster.src)
                         }
-                        className="h-full w-full rounded-lg object-cover transition-all"
+                        className="h-full w-full rounded-t-lg object-cover transition-all md:rounded-lg"
                         style={{
                           filter:
                             project.invertColorsInTheme === theme.themeName &&
-                            !disableReverseColors
+                            !disableReverseColors &&
+                            !isMedium
                               ? "invert(1)"
                               : "invert(0)"
                         }}
@@ -104,15 +108,16 @@ export default function Projects() {
                         style={{
                           filter:
                             project.invertColorsInTheme === theme.themeName &&
-                            !disableReverseColors
+                            !disableReverseColors &&
+                            !isMedium
                               ? "invert(1)"
                               : "invert(0)"
                         }}
-                        className="h-full w-full rounded-lg object-cover"
+                        className="h-full w-full rounded-t-lg object-cover transition-all md:rounded-lg"
                       />
                     )}
 
-                    <div className="absolute inset-0 flex flex-col items-center justify-center rounded-lg bg-gradient-to-t from-white/80 to-white/20 opacity-0 backdrop-blur-md transition-opacity hover:opacity-100 dark:from-black/80 dark:to-black/20">
+                    <div className="absolute inset-0 hidden flex-col items-center justify-center rounded-lg bg-gradient-to-t from-white/80 to-white/20 opacity-0 backdrop-blur-md transition-opacity hover:opacity-100 dark:from-black/80 dark:to-black/20 md:flex">
                       <div className="absolute right-1 top-1">
                         {project.invertColorsInTheme === theme.themeName && (
                           <Button
@@ -151,16 +156,16 @@ export default function Projects() {
                         ))}
                       </div>
 
-                      <h3 className="mb-4 text-center text-3xl font-bold tracking-tight text-primary">
+                      <h3 className="mb-4 overflow-hidden text-ellipsis text-nowrap text-center text-3xl font-bold tracking-tight text-primary">
                         {project.title}
                       </h3>
-                      <p className="mb-4 text-center text-sm text-primary/80">
+                      <p className="mb-4 overflow-hidden text-ellipsis text-nowrap text-center text-sm text-primary/80">
                         {project.description}
                       </p>
                       <div className="flex items-center justify-center gap-4">
                         <Button variant="default" className="gap-2">
-                          Ver mais
                           <ExpandIcon size={24} />
+                          Ver mais
                         </Button>
                         <Button
                           variant="link"
@@ -173,12 +178,52 @@ export default function Projects() {
                       </div>
                     </div>
                   </AspectRatio>
+                  <CardContent className="mt-4 md:hidden">
+                    <h3 className="mb-4 overflow-hidden text-ellipsis text-nowrap text-center text-3xl font-bold tracking-tight text-primary">
+                      {project.title}
+                    </h3>
+                    <p className="overflow-hidden text-ellipsis text-nowrap text-center text-sm text-primary/80">
+                      {project.description}
+                    </p>
+                    <div className="mt-4 flex flex-wrap justify-center gap-1">
+                      {project.badges.map((badge) => (
+                        <Badge
+                          key={badge.id}
+                          className="font-mono text-xs text-primary/80 dark:text-primary/80"
+                          style={{
+                            background: transparentize(0.9, badge.iconColor)
+                          }}
+                        >
+                          <badge.icon
+                            size={16}
+                            color={badge.iconColor}
+                            className="my-[0.2rem] mr-1"
+                          />
+                          {badge.name}
+                        </Badge>
+                      ))}
+                    </div>
+                  </CardContent>
+                  <CardFooter className="flex justify-between md:hidden">
+                    <Button variant="default" className="gap-2">
+                      <ExpandIcon size={24} />
+                      Ver mais
+                    </Button>
+                    <Button
+                      variant="link"
+                      className="gap-2"
+                      onClick={() => window.open(project.url, "_blank")}
+                    >
+                      Abrir
+                      <ExternalLinkIcon size={24} />
+                    </Button>
+                  </CardFooter>
                 </Card>
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious className="left-[2rem]" />
-          <CarouselNext className="right-[2rem]" />
+          <CarouselPrevious className="left-[2rem] opacity-50" />
+          <CarouselNext className="right-[2rem] opacity-50" />
         </Carousel>
       </div>
     </section>

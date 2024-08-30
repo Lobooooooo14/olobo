@@ -1,4 +1,6 @@
 import {
+  SiDiscord,
+  SiDiscordHex,
   SiFirebase,
   SiFirebaseHex,
   SiIonic,
@@ -32,6 +34,8 @@ import ShortStatsLightPoster from "@/assets/short-stats/short-stats-light-poster
 import ShortStatsLightVideo from "@/assets/short-stats/short-stats-light-video.mp4"
 import TempyratureDarkPoster from "@/assets/tempyrature/tempyrature-dark-poster.png"
 import TempyratureLightPoster from "@/assets/tempyrature/tempyrature-light-poster.png"
+import VexpyDarkPoster from "@/assets/vexpy/vexpy-dark-poster.png"
+import VexpyLightPoster from "@/assets/vexpy/vexpy-light-poster.png"
 import { ProjectListType } from "@/pages/Home/Projects"
 
 export const projectsList: ProjectListType = [
@@ -72,6 +76,12 @@ export const projectsList: ProjectListType = [
       },
       {
         id: 5,
+        name: "Vite",
+        icon: SiVite,
+        iconColor: SiViteHex
+      },
+      {
+        id: 6,
         name: "Firebase",
         icon: SiFirebase,
         iconColor: SiFirebaseHex
@@ -141,6 +151,12 @@ export const projectsList: ProjectListType = [
       },
       {
         id: 3,
+        name: "Vite",
+        icon: SiVite,
+        iconColor: SiViteHex
+      },
+      {
+        id: 4,
         name: "Firebase",
         icon: SiFirebase,
         iconColor: SiFirebaseHex
@@ -185,5 +201,29 @@ export const projectsList: ProjectListType = [
     title: "Tempyrature",
     description: "Biblioteca de conversão de temperatura em Python.",
     url: "https://tempyrature.readthedocs.io/en/latest/"
+  },
+  {
+    id: 5,
+    poster: {
+      dark: VexpyDarkPoster,
+      light: VexpyLightPoster
+    },
+    badges: [
+      {
+        id: 1,
+        name: "Python",
+        icon: SiPython,
+        iconColor: SiPythonHex
+      },
+      {
+        id: 2,
+        name: "Disnake",
+        icon: SiDiscord,
+        iconColor: SiDiscordHex
+      }
+    ],
+    title: "Vex.py",
+    description: "Bot de Discord em Python.",
+    url: "https://github.com/BotVex/Vex.py/"
   }
 ]
