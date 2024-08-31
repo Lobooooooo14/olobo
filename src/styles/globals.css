@@ -73,10 +73,14 @@
     background-size: calc(100% / 50) calc(100% / 10);
     background-image: linear-gradient(
         to right,
-        hsl(var(--border) / 0.8) 1px,
+        hsl(var(--border) / 0.8) calc(100% / 20),
         transparent 1px
       ),
-      linear-gradient(to bottom, hsl(var(--border) / 0.8) 1px, transparent 1px);
+      linear-gradient(
+        to bottom,
+        hsl(var(--border) / 0.8) calc(100% / 80),
+        transparent 1px
+      );
     mask-image: radial-gradient(circle at 50% 50%, black, transparent);
   }
 
