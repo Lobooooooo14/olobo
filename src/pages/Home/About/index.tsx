@@ -38,7 +38,7 @@ export default function About() {
             initial={{ opacity: 0 }}
             whileInView={{
               opacity: 1,
-              transition: { delay: 0.2, duration: 0.5 }
+              transition: { duration: 0.5 }
             }}
             className="col-span-4 col-start-1 row-span-1 row-start-1 flex flex-col justify-center p-4 sm:col-span-2 sm:row-span-2"
           >
@@ -56,7 +56,7 @@ export default function About() {
             whileInView={{
               opacity: 1,
               scale: 1,
-              transition: { delay: 0.3, stiffness: 0 }
+              transition: { stiffness: 0 }
             }}
             className="grid-icon-box col-span-2 col-start-1 row-start-2 rounded-lg sm:col-span-1 sm:col-start-4 sm:row-start-1 sm:rounded-none"
             style={{ background: transparentize(0.92, SiArduinoHex) }}
@@ -68,7 +68,7 @@ export default function About() {
             whileInView={{
               opacity: 1,
               scale: 1,
-              transition: { delay: 0.3, stiffness: 0 }
+              transition: { stiffness: 0 }
             }}
             className="grid-icon-box col-span-2 col-start-3 rounded-lg sm:col-span-1 sm:col-start-3 sm:row-start-2 sm:rounded-none"
             style={{ background: transparentize(0.92, SiPythonHex) }}
@@ -79,7 +79,7 @@ export default function About() {
             initial={{ opacity: 0 }}
             whileInView={{
               opacity: 1,
-              transition: { delay: 0.2, duration: 0.5 }
+              transition: { duration: 0.5 }
             }}
             className="col-span-4 col-start-1 row-start-3 flex flex-col justify-center p-4 sm:col-span-2 sm:col-start-3 sm:row-span-2 sm:row-start-3 sm:items-end"
           >
@@ -97,7 +97,7 @@ export default function About() {
             whileInView={{
               opacity: 1,
               scale: 1,
-              transition: { delay: 0.3, stiffness: 0 }
+              transition: { stiffness: 0 }
             }}
             className="grid-icon-box col-start-1 row-start-4 rounded-lg sm:row-start-4 sm:rounded-none"
             style={{ background: transparentize(0.92, SiHtml5Hex) }}
@@ -109,7 +109,7 @@ export default function About() {
             whileInView={{
               opacity: 1,
               scale: 1,
-              transition: { delay: 0.3, stiffness: 0 }
+              transition: { stiffness: 0 }
             }}
             className="grid-icon-box col-start-4 row-start-4 rounded-lg sm:col-start-2 sm:row-start-5 sm:rounded-none"
             style={{ background: transparentize(0.92, SiCss3Hex) }}
@@ -121,7 +121,7 @@ export default function About() {
             whileInView={{
               opacity: 1,
               scale: 1,
-              transition: { delay: 0.3, stiffness: 0 }
+              transition: { stiffness: 0 }
             }}
             className="grid-icon-box col-span-2 col-start-2 row-start-4 rounded-lg sm:col-span-1 sm:col-start-1 sm:row-start-5 sm:rounded-none"
             style={{ background: transparentize(0.92, SiJavascriptHex) }}
@@ -132,7 +132,7 @@ export default function About() {
             initial={{ opacity: 0 }}
             whileInView={{
               opacity: 1,
-              transition: { delay: 0.2, duration: 0.5 }
+              transition: { duration: 0.5 }
             }}
             className="col-span-4 col-start-1 row-start-5 flex flex-col justify-center p-4 sm:col-span-2 sm:col-start-1 sm:row-span-2 sm:row-start-6"
           >
@@ -149,7 +149,7 @@ export default function About() {
             whileInView={{
               opacity: 1,
               scale: 1,
-              transition: { delay: 0.3, stiffness: 0 }
+              transition: { stiffness: 0 }
             }}
             className="grid-icon-box col-span-2 col-start-1 row-start-6 rounded-lg sm:col-span-1 sm:col-start-4 sm:row-start-6 sm:rounded-none"
             style={{ background: transparentize(0.92, SiTypescriptHex) }}
@@ -161,7 +161,7 @@ export default function About() {
             whileInView={{
               opacity: 1,
               scale: 1,
-              transition: { delay: 0.3, stiffness: 0 }
+              transition: { stiffness: 0 }
             }}
             className="grid-icon-box col-span-2 col-start-3 row-start-6 rounded-lg sm:col-span-1 sm:col-start-3 sm:row-start-7 sm:rounded-none"
             style={{ background: transparentize(0.92, SiReactHex) }}
@@ -173,7 +173,7 @@ export default function About() {
             whileInView={{
               opacity: 1,
               scale: 1,
-              transition: { delay: 0.3, stiffness: 0 }
+              transition: { stiffness: 0 }
             }}
             className="grid-icon-box col-start-1 row-start-7 rounded-lg sm:col-start-1 sm:row-start-8 sm:rounded-none"
             style={{ background: transparentize(0.92, SiSassHex) }}
@@ -185,7 +185,7 @@ export default function About() {
             whileInView={{
               opacity: 1,
               scale: 1,
-              transition: { delay: 0.3, stiffness: 0 }
+              transition: { stiffness: 0 }
             }}
             className="grid-icon-box col-span-2 row-start-7 rounded-lg sm:col-span-2 sm:col-start-3 sm:row-start-8 sm:rounded-none"
             style={{ background: transparentize(0.92, SiViteHex) }}
@@ -197,7 +197,7 @@ export default function About() {
             whileInView={{
               opacity: 1,
               scale: 1,
-              transition: { delay: 0.3, stiffness: 0 }
+              transition: { stiffness: 0 }
             }}
             className="grid-icon-box col-start-4 row-start-7 rounded-lg sm:col-start-4 sm:row-start-8 sm:rounded-none"
             style={{ background: transparentize(0.92, SiTailwindcssHex) }}
