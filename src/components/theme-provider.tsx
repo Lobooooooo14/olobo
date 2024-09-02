@@ -8,7 +8,7 @@ type ThemeProviderProps = {
   storageKey?: string
 }
 
-type ThemeProviderState = {
+export type ThemeProviderState = {
   theme: Theme
   themeName: "dark" | "light" | null
   setTheme: (theme: Theme) => void

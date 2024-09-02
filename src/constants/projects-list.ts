@@ -1,4 +1,5 @@
 import {
+  IconType,
   SiDiscord,
   SiDiscordHex,
   SiFirebase,
@@ -16,7 +17,6 @@ import {
   SiReact,
   SiReactHex,
   SiSphinx,
-  SiSphinxHex,
   SiTailwindcss,
   SiTailwindcssHex,
   SiTypescript,
@@ -36,9 +36,36 @@ import TempyratureDarkPoster from "@/assets/tempyrature/tempyrature-dark-poster.
 import TempyratureLightPoster from "@/assets/tempyrature/tempyrature-light-poster.png"
 import VexpyDarkPoster from "@/assets/vexpy/vexpy-dark-poster.png"
 import VexpyLightPoster from "@/assets/vexpy/vexpy-light-poster.png"
-import { ProjectListType } from "@/pages/Home/Projects"
 
-export const projectsList: ProjectListType = [
+type BadgeType = {
+  id: number
+  name: string
+  icon: IconType
+  iconColor: string
+}
+
+export type ProjectListType = {
+  id: number
+  invertColorsInTheme?: "light" | "dark"
+  video?: {
+    src?: string
+    dark?: string
+    light?: string
+  }
+  badges: BadgeType[]
+  poster: {
+    src?: string
+    dark?: string
+    light?: string
+  }
+  title: string
+  description: string
+  url: string
+}
+
+export type projectsListType = ProjectListType[]
+
+export const projectsList: projectsListType = [
   {
     id: 1,
     video: {
