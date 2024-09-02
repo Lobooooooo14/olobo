@@ -1,5 +1,6 @@
 import { Outlet } from "react-router-dom"
 
+import Footer from "@/components/footer"
 import Header, { Buttons, Navbar } from "@/components/header"
 import { Separator } from "@/components/ui/separator"
 import {
@@ -25,6 +26,7 @@ export default function Root() {
         </SheetContent>
         <Header />
         <Outlet />
+        <Footer />
       </Sheet>
     </main>
   )

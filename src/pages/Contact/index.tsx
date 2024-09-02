@@ -50,13 +50,13 @@ export default function Contact() {
               <MailIcon size={32} />
               Envie-me um e-mail
             </CardTitle>
-            <CardDescription className="text-pretty">
+            <CardDescription className="text-pretty leading-relaxed">
               Envie um email para{" "}
-              <span className="font-mono font-bold">
+              <code className="relative rounded bg-muted px-[0.3rem] py-[0.2rem] font-mono text-sm font-semibold">
                 lobooooooo14@gmail.com
-              </span>
-              . Caso utilize o algum cliente de e-mail, você pode usar o
-              formulário abaixo.
+              </code>
+              . Caso utilize o algum cliente de e-mail, você também poderá
+              utilizar o formulário abaixo.
             </CardDescription>
           </CardHeader>
           <CardContent>
