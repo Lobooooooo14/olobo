@@ -1,3 +1,5 @@
+import { redirect } from "react-router-dom"
+
 import { SiGithub } from "@icons-pack/react-simple-icons"
 import { motion } from "framer-motion"
 import { MenuIcon, MoonIcon, SunIcon } from "lucide-react"
@@ -130,7 +132,13 @@ export function Buttons({
   return (
     <div className={cn("flex justify-center gap-4", className)} {...rest}>
       <SheetClose asChild>
-        <Button variant="ghost" size="icon">
+        <Button
+          variant="ghost"
+          size="icon"
+          onClick={() =>
+            window.open("https://github.com/Lobooooooo14", "_blank")
+          }
+        >
           <SiGithub size={22} />
         </Button>
       </SheetClose>
