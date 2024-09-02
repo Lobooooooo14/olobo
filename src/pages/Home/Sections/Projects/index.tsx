@@ -5,7 +5,6 @@ import { Link, redirect } from "react-router-dom"
 import { ExpandIcon, ExternalLinkIcon, TriangleAlertIcon } from "lucide-react"
 import { transparentize } from "polished"
 
-import { useTheme } from "@/components/theme-provider"
 import { AspectRatio } from "@/components/ui/aspect-ratio"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
@@ -18,6 +17,8 @@ import {
   CarouselPrevious
 } from "@/components/ui/carousel"
 import { Separator } from "@/components/ui/separator"
+
+import { useTheme } from "@/components/theme-provider"
 
 import { projectsList, ProjectListType } from "@/constants/projects-list"
 

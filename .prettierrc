@@ -11,12 +11,11 @@
   ],
   "importOrder": [
     "^react(.*)",
-    "^@ionic(.*)",
-    "^@capacitor(.*)",
     "<THIRD_PARTY_MODULES>",
     "^@/hooks(.*)",
     "^@/store(.*)",
     "^@/services(.*)",
+    "^@/components/ui(.*)",
     "^@/components(.*)",
     "@/(.*)",
     "^[./]"

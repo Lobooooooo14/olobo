@@ -2,7 +2,6 @@ import { SiGithub } from "@icons-pack/react-simple-icons"
 import { motion } from "framer-motion"
 import { MenuIcon, MoonIcon, SunIcon } from "lucide-react"
 
-import { useTheme } from "@/components/theme-provider"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Button } from "@/components/ui/button"
 import {
@@ -12,6 +11,8 @@ import {
   DropdownMenuTrigger
 } from "@/components/ui/dropdown-menu"
 import { SheetClose, SheetTrigger } from "@/components/ui/sheet"
+
+import { useTheme } from "@/components/theme-provider"
 
 import avatar from "@/assets/avatar.png"
 import { cn } from "@/lib/utils"

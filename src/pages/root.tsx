@@ -1,7 +1,5 @@
 import { Outlet } from "react-router-dom"
 
-import Footer from "@/components/footer"
-import Header, { Buttons, Navbar } from "@/components/header"
 import { Separator } from "@/components/ui/separator"
 import {
   Sheet,
@@ -10,6 +8,9 @@ import {
   SheetHeader,
   SheetTitle
 } from "@/components/ui/sheet"
+
+import Footer from "@/components/footer"
+import Header, { Buttons, Navbar } from "@/components/header"
 
 export default function Root() {
   return (
