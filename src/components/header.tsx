@@ -1,4 +1,4 @@
-import { redirect } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 
 import { SiGithub } from "@icons-pack/react-simple-icons"
 import { motion } from "framer-motion"
@@ -19,12 +19,11 @@ import { useTheme } from "@/components/theme-provider"
 import avatar from "@/assets/avatar.png"
 import { cn } from "@/lib/utils"
 
-export type LinksType = { id: number; name: string; elementId: string }[]
+export type LinksType = { id: number; name: string; route: string }[]
 
 export const linksNavItems: LinksType = [
-  { id: 1, name: "Sobre", elementId: "about" },
-  { id: 2, name: "Projetos", elementId: "projects" },
-  { id: 3, name: "Contato", elementId: "contact" }
+  { id: 1, name: "Início", route: "/" },
+  { id: 2, name: "Projetos", route: "/projects" }
 ]
 
 export default function Header() {
@@ -96,6 +95,7 @@ export interface NavbarProps extends React.HTMLAttributes<HTMLDivElement> {
 }
 
 export function Navbar({ mobile = false, className, ...rest }: NavbarProps) {
+  const navigate = useNavigate()
   return (
     <nav
       className={cn(
@@ -110,11 +110,7 @@ export function Navbar({ mobile = false, className, ...rest }: NavbarProps) {
       {linksNavItems.map((link) => (
         <SheetClose asChild key={link.id}>
           <span
-            onClick={() =>
-              document.getElementById(link.elementId)?.scrollIntoView({
-                behavior: "smooth"
-              })
-            }
+            onClick={() => navigate(link.route)}
             className="cursor-pointer text-foreground/60 transition-colors hover:text-foreground/80"
           >
             {link.name}
