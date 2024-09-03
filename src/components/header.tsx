@@ -1,8 +1,9 @@
+import { useTranslation } from "react-i18next"
 import { useNavigate } from "react-router-dom"
 
 import { SiGithub } from "@icons-pack/react-simple-icons"
 import { motion } from "framer-motion"
-import { MenuIcon, MoonIcon, SunIcon } from "lucide-react"
+import { LanguagesIcon, MenuIcon, MoonIcon, SunIcon } from "lucide-react"
 
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Button } from "@/components/ui/button"
@@ -22,11 +23,13 @@ import { cn } from "@/lib/utils"
 export type LinksType = { id: number; name: string; route: string }[]
 
 export const linksNavItems: LinksType = [
-  { id: 1, name: "Início", route: "/" },
-  { id: 2, name: "Projetos", route: "/projects" }
+  { id: 1, name: "header.navbar.home", route: "/" },
+  { id: 2, name: "header.navbar.projects", route: "/projects" }
 ]
 
 export default function Header() {
+  const { t } = useTranslation()
+
   return (
     <motion.header
       initial={{ opacity: 0, y: -60 }}
@@ -43,16 +46,18 @@ export default function Header() {
             <AvatarFallback>L</AvatarFallback>
           </Avatar>
 
-          <span className="text-lg font-normal">Lobo</span>
+          <span className="text-lg font-normal">{t("header.name")}</span>
         </a>
         <Navbar />
       </div>
       <div className="hidden items-center gap-4 sm:flex">
         <ThemeToggle />
+        <LanguageToggle />
         <Buttons />
       </div>
       <div className="flex items-center gap-4 sm:hidden">
         <ThemeToggle />
+        <LanguageToggle />
         <SheetTrigger asChild>
           <Button variant="ghost" size="icon">
             <MenuIcon size={24} />
@@ -65,6 +70,7 @@ export default function Header() {
 
 function ThemeToggle() {
   const { setTheme } = useTheme()
+  const { t } = useTranslation()
 
   return (
     <DropdownMenu>
@@ -72,19 +78,38 @@ function ThemeToggle() {
         <Button variant="outline" size="icon">
           <SunIcon className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
           <MoonIcon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
-          <span className="sr-only">Alterar tema</span>
+          <span className="sr-only">{t("header.theme.changeTheme")}</span>
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
         <DropdownMenuItem onClick={() => setTheme("light")}>
-          Claro
+          {t("header.theme.light")}
         </DropdownMenuItem>
         <DropdownMenuItem onClick={() => setTheme("dark")}>
-          Escuro
+          {t("header.theme.dark")}
         </DropdownMenuItem>
         <DropdownMenuItem onClick={() => setTheme("system")}>
-          Sistema
+          {t("header.theme.system")}
         </DropdownMenuItem>
+      </DropdownMenuContent>
+    </DropdownMenu>
+  )
+}
+
+function LanguageToggle() {
+  const { t } = useTranslation()
+
+  return (
+    <DropdownMenu>
+      <DropdownMenuTrigger asChild>
+        <Button variant="outline" size="icon">
+          <LanguagesIcon className="h-[1.2rem] w-[1.2rem] scale-100" />
+          <span className="sr-only">{t("header.language.changeLanguage")}</span>
+        </Button>
+      </DropdownMenuTrigger>
+      <DropdownMenuContent align="end">
+        <DropdownMenuItem>{t("header.language.english")}</DropdownMenuItem>
+        <DropdownMenuItem>{t("header.language.portuguese")}</DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
   )
@@ -96,6 +121,8 @@ export interface NavbarProps extends React.HTMLAttributes<HTMLDivElement> {
 
 export function Navbar({ mobile = false, className, ...rest }: NavbarProps) {
   const navigate = useNavigate()
+  const { t } = useTranslation()
+
   return (
     <nav
       className={cn(
@@ -113,7 +140,7 @@ export function Navbar({ mobile = false, className, ...rest }: NavbarProps) {
             onClick={() => navigate(link.route)}
             className="cursor-pointer text-foreground/60 transition-colors hover:text-foreground/80"
           >
-            {link.name}
+            {t(link.name)}
           </span>
         </SheetClose>
       ))}

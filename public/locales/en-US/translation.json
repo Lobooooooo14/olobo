@@ -1,0 +1,20 @@
+{
+  "header": {
+    "name": "Lobo",
+    "theme": {
+      "dark": "Dark",
+      "light": "Light",
+      "system": "System",
+      "changeTheme": "Change theme"
+    },
+    "language": {
+      "changeLanguage": "Change language",
+      "english": "English",
+      "portuguese": "Portuguese"
+    },
+    "navbar": {
+      "home": "Home",
+      "projects": "Projects"
+    }
+  }
+}
