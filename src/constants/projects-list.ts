@@ -46,6 +46,9 @@ type BadgeType = {
 
 export type ProjectListType = {
   id: number
+  title: string
+  description: string
+  url: string
   invertColorsInTheme?: "light" | "dark"
   video?: {
     src?: string
@@ -58,9 +61,6 @@ export type ProjectListType = {
     dark?: string
     light?: string
   }
-  title: string
-  description: string
-  url: string
 }
 
 export type projectsListType = ProjectListType[]
@@ -68,6 +68,9 @@ export type projectsListType = ProjectListType[]
 export const projectsList: projectsListType = [
   {
     id: 1,
+    title: "Short Stats",
+    description: "projectsList.shortStats.description",
+    url: "https://s.olobo.xyz/short",
     video: {
       dark: ShortStatsDarkVideo,
       light: ShortStatsLightVideo
@@ -113,13 +116,13 @@ export const projectsList: projectsListType = [
         icon: SiFirebase,
         iconColor: SiFirebaseHex
       }
-    ],
-    title: "Short Stats",
-    description: "Um simples encurtador de URLs.",
-    url: "https://s.olobo.xyz/short"
+    ]
   },
   {
     id: 2,
+    title: "Biblioteca Pocket",
+    description: "projectsList.bibliotecaPocket.description",
+    url: "https://bpocket-about.vercel.app/",
     invertColorsInTheme: "light",
     video: {
       src: BibliotecaPocketVideo
@@ -152,13 +155,13 @@ export const projectsList: projectsListType = [
         icon: SiTailwindcss,
         iconColor: SiTailwindcssHex
       }
-    ],
-    title: "Biblioteca Pocket",
-    description: "Landing page para um app de livros.",
-    url: "https://bpocket-about.vercel.app/"
+    ]
   },
   {
     id: 3,
+    title: "Arroz Chat",
+    description: "projectsList.arrozChat.description",
+    url: "https://arroz-chat.vercel.app/",
     invertColorsInTheme: "light",
     poster: {
       src: ArrozChatPoster
@@ -188,13 +191,13 @@ export const projectsList: projectsListType = [
         icon: SiFirebase,
         iconColor: SiFirebaseHex
       }
-    ],
-    title: "Arroz Chat",
-    description: "Chat em tempo real usando Firebase.",
-    url: "https://arroz-chat.vercel.app/"
+    ]
   },
   {
     id: 4,
+    title: "Tempyrature",
+    description: "projectsList.tempyrature.description",
+    url: "https://tempyrature.readthedocs.io/en/latest/",
     poster: {
       dark: TempyratureDarkPoster,
       light: TempyratureLightPoster
@@ -224,13 +227,13 @@ export const projectsList: projectsListType = [
         icon: SiSphinx,
         iconColor: "#4e4e4e"
       }
-    ],
-    title: "Tempyrature",
-    description: "Biblioteca de conversão de temperatura em Python.",
-    url: "https://tempyrature.readthedocs.io/en/latest/"
+    ]
   },
   {
     id: 5,
+    title: "Vex.py",
+    description: "projectsList.vexpy.description",
+    url: "https://github.com/BotVex/Vex.py/",
     poster: {
       dark: VexpyDarkPoster,
       light: VexpyLightPoster
@@ -248,9 +251,6 @@ export const projectsList: projectsListType = [
         icon: SiDiscord,
         iconColor: SiDiscordHex
       }
-    ],
-    title: "Vex.py",
-    description: "Bot de Discord em Python.",
-    url: "https://github.com/BotVex/Vex.py/"
+    ]
   }
 ]

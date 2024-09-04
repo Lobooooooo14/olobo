@@ -6,6 +6,8 @@ import NotFound from "@/pages/not-found"
 import Projects from "@/pages/projects"
 import Root from "@/pages/root"
 
+import Loading from "./components/loading"
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -29,5 +31,5 @@ const router = createBrowserRouter([
 ])
 
 export default function Routes() {
-  return <RouterProvider router={router} />
+  return <RouterProvider router={router} fallbackElement={<Loading expand />} />
 }

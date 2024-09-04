@@ -9,22 +9,22 @@
     },
     "language": {
       "changeLanguage": "Change language",
-      "english": "English",
-      "portuguese": "Portuguese"
+      "english": "🇺🇸 English",
+      "portuguese": "🇧🇷 Portuguese"
     },
     "navbar": {
       "home": "Home",
       "projects": "Projects"
     }
   },
-  "notFound": {
+  "notfound": {
     "404": "404",
     "pageNotFound": "Whoops! Page not found.",
     "back": "Back"
   },
-  "errorPage": {
+  "errorpage": {
     "oops": "Oops!",
-    "sometingWentWrong": "Something went wrong."
+    "somethingWentWrong": "Something went wrong."
   },
   "home": {
     "hero": {
@@ -51,7 +51,9 @@
       "viewAll": "View all projects",
       "card": {
         "seeMore": "See More",
-        "openProject": "Open"
+        "openProject": "Open",
+        "invertColors": "Inverted Colors. Click to disable",
+        "originalColors": "Original Colors. Click to invert"
       }
     },
     "contact": {
@@ -73,6 +75,27 @@
           "send": "Send"
         }
       }
+    }
+  },
+  "projects": {
+    "title": "Comming soon",
+    "back": "Back"
+  },
+  "projectsList": {
+    "shortStats": {
+      "description": "A simple URL shortener."
+    },
+    "arrozChat": {
+      "description": "A realtime chat with Firebase"
+    },
+    "bibliotecaPocket": {
+      "description": "Landing page for a book app."
+    },
+    "tempyrature": {
+      "description": "A temperature conversion library in Python."
+    },
+    "vexpy": {
+      "description": "A Discord bot made in Python."
     }
   }
 }

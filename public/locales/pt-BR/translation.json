@@ -9,22 +9,22 @@
     },
     "language": {
       "changeLanguage": "Mudar idioma",
-      "english": "Inglês",
-      "portuguese": "Português"
+      "english": "🇺🇸 Inglês",
+      "portuguese": "🇧🇷 Português"
     },
     "navbar": {
       "home": "Início",
       "projects": "Projetos"
     }
   },
-  "notFound": {
+  "notfound": {
     "404": "404",
     "pageNotFound": "Oops! Página não encontrada.",
     "back": "Voltar"
   },
-  "errorPage": {
+  "errorage": {
     "oops": "Oops!",
-    "sometingWentWrong": "Algo deu errado."
+    "somethingWentWrong": "Algo deu errado."
   },
   "home": {
     "hero": {
@@ -51,7 +51,9 @@
       "viewAll": "Ver todos os projetos",
       "card": {
         "seeMore": "Ver mais",
-        "openProject": "Abrir"
+        "openProject": "Abrir",
+        "invertColors": "Cores invertidas. Clique para desativar",
+        "originalColors": "Cores originais. Clique para inverter"
       }
     },
     "contact": {
@@ -73,6 +75,27 @@
           "send": "Enviar"
         }
       }
+    }
+  },
+  "projects": {
+    "title": "Em breve",
+    "back": "Voltar"
+  },
+  "projectsList": {
+    "shortStats": {
+      "description": "Um simples encurtador de URL."
+    },
+    "arrozChat": {
+      "description": "Um chat em tempo real usando Firebase."
+    },
+    "bibliotecaPocket": {
+      "description": "Landing page para um app de livros."
+    },
+    "tempyrature": {
+      "description": "Uma biblioteca de conversão de temperatura em Python."
+    },
+    "vexpy": {
+      "description": "Um bot do Discord feito em Python."
     }
   }
 }

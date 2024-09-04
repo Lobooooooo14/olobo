@@ -89,6 +89,6 @@
   }
 
   .twemoji {
-    @apply m-1 w-5 lg:w-6;
+    @apply m-1 w-5;
   }
 }

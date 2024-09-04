@@ -115,11 +115,11 @@ function LanguageToggle() {
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
         <Twemoji options={{ className: "twemoji" }}>
-          <DropdownMenuItem onClick={() => handleChangeLanguage("en")}>
-            🇺🇸 {t("header.language.english")}
+          <DropdownMenuItem onClick={() => handleChangeLanguage("en-US")}>
+            {t("header.language.english")}
           </DropdownMenuItem>
-          <DropdownMenuItem onClick={() => handleChangeLanguage("pt")}>
-            🇧🇷 {t("header.language.portuguese")}
+          <DropdownMenuItem onClick={() => handleChangeLanguage("pt-BR")}>
+            {t("header.language.portuguese")}
           </DropdownMenuItem>
         </Twemoji>
       </DropdownMenuContent>

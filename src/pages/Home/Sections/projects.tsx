@@ -52,8 +52,8 @@ export default function Projects() {
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious className="left-[2rem] opacity-50" />
-          <CarouselNext className="right-[2rem] opacity-50" />
+          <CarouselPrevious className="left-[2rem] opacity-50 lg:left-[-2.5rem]" />
+          <CarouselNext className="right-[2rem] opacity-50 lg:right-[-2.5rem]" />
         </Carousel>
       </div>
       <div className="mt-6 flex w-full justify-center">
@@ -136,9 +136,11 @@ function ProjectCard({ project }: { project: ProjectListType }) {
                   color="orange"
                   className="my-[0.2rem] mr-1"
                 />
-                {!disableReverseColors
-                  ? "Cores inversas. Toque para desativar"
-                  : "Cores originais. Toque para inverter"}
+                {t(
+                  !disableReverseColors
+                    ? "home.projects.card.invertColors"
+                    : "home.projects.card.originalColors"
+                )}
               </Button>
             )}
           </div>
@@ -165,7 +167,7 @@ function ProjectCard({ project }: { project: ProjectListType }) {
             {project.title}
           </h3>
           <p className="mb-4 overflow-hidden text-ellipsis text-nowrap text-center text-sm text-primary/80">
-            {project.description}
+            {t(project.description)}
           </p>
           <div className="flex items-center justify-center gap-4">
             <Button variant="default" className="gap-2">
