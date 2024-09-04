@@ -1,3 +1,5 @@
+import { useTranslation } from "react-i18next"
+
 import {
   SiArduinoHex,
   SiArduino,
@@ -26,10 +28,14 @@ import { transparentize } from "polished"
 import { Separator } from "@/components/ui/separator"
 
 export default function About() {
+  const { t } = useTranslation()
+
   return (
     <section id="about" className="py-16">
       <div className="mb-6 flex w-full flex-col items-center">
-        <h2 className="mb-2 mt-4 text-center text-4xl font-bold">Sobre</h2>
+        <h2 className="mb-2 mt-4 text-center text-4xl font-bold">
+          {t("home.about.title")}
+        </h2>
         <Separator className="w-1/3" />
       </div>
       <div className="flex justify-center">
@@ -43,12 +49,10 @@ export default function About() {
             className="col-span-4 col-start-1 row-span-1 row-start-1 flex flex-col justify-center p-4 sm:col-span-2 sm:row-span-2"
           >
             <h3 className="mb-4 text-center text-3xl font-bold tracking-tight text-primary sm:text-pretty sm:text-left">
-              O início
+              {t("home.about.begin.title")}
             </h3>
             <p className="text-center text-primary/80 sm:text-pretty sm:text-left">
-              Tive meu primeiro contato com a programação em 2016, por meio do
-              Arduino, lendo e-books gratuitos na internet. Pouco tempo depois,
-              decidi aprender Python utilizando apenas um celular.
+              {t("home.about.begin.description")}
             </p>
           </motion.div>
           <motion.div
@@ -84,12 +88,10 @@ export default function About() {
             className="col-span-4 col-start-1 row-start-3 flex flex-col justify-center p-4 sm:col-span-2 sm:col-start-3 sm:row-span-2 sm:row-start-3 sm:items-end"
           >
             <h3 className="mb-4 text-center text-3xl font-bold tracking-tight text-primary sm:text-pretty sm:text-left">
-              A decisão
+              {t("home.about.decision.title")}
             </h3>
             <p className="text-left text-primary/80 sm:text-pretty sm:text-right">
-              Dediquei-me exclusivamente ao Python por um longo período, mas
-              percebi que era o momento de expandir meus conhecimentos. Foi
-              então que comecei a estudar HTML, CSS e JavaScript.
+              {t("home.about.decision.description")}
             </p>
           </motion.div>
           <motion.div
@@ -137,11 +139,10 @@ export default function About() {
             className="col-span-4 col-start-1 row-start-5 flex flex-col justify-center p-4 sm:col-span-2 sm:col-start-1 sm:row-span-2 sm:row-start-6"
           >
             <h3 className="mb-4 text-center text-3xl font-bold tracking-tight text-primary sm:text-pretty sm:text-left">
-              A progressão
+              {t("home.about.progression.title")}
             </h3>
             <p className="text-primary/80 sm:text-pretty">
-              Desde então, continuei aprendendo, com foco principalmente no
-              framework React, além de explorar outras tecnologias.
+              {t("home.about.progression.description")}
             </p>
           </motion.div>
           <motion.div

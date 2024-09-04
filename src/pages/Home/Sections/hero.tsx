@@ -1,6 +1,10 @@
+import { useTranslation } from "react-i18next"
+
 import { motion } from "framer-motion"
 
 export default function Hero() {
+  const { t } = useTranslation()
+
   return (
     <motion.section
       initial={{ opacity: 0, scale: 0.5 }}
@@ -25,7 +29,7 @@ export default function Hero() {
             }}
             className="mb-2 text-pretty bg-black bg-gradient-to-b from-primary/90 to-primary/60 bg-clip-text text-center text-3xl font-extrabold tracking-tight text-transparent md:text-5xl lg:text-6xl"
           >
-            Olá, eu sou o Lobo
+            {t("home.hero.title")}
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 100, letterSpacing: "0.3em" }}
@@ -41,7 +45,7 @@ export default function Hero() {
             }}
             className="text-md text-nowrap bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-center font-mono font-bold uppercase tracking-widest text-transparent drop-shadow-[0_0_10px_rgba(34,211,238,0.2)]"
           >
-            Desenvolvedor front-end
+            {t("home.hero.subtitle")}
           </motion.p>
         </div>
       </div>

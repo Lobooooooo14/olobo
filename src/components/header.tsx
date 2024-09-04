@@ -1,5 +1,6 @@
 import { useTranslation } from "react-i18next"
 import { useNavigate } from "react-router-dom"
+import Twemoji from "react-twemoji"
 
 import { SiGithub } from "@icons-pack/react-simple-icons"
 import { motion } from "framer-motion"
@@ -19,6 +20,7 @@ import { useTheme } from "@/components/theme-provider"
 
 import avatar from "@/assets/avatar.png"
 import { cn } from "@/lib/utils"
+import i18n from "@/locale/i18n"
 
 export type LinksType = { id: number; name: string; route: string }[]
 
@@ -99,6 +101,10 @@ function ThemeToggle() {
 function LanguageToggle() {
   const { t } = useTranslation()
 
+  const handleChangeLanguage = (language: string) => {
+    i18n.changeLanguage(language)
+  }
+
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
@@ -108,8 +114,14 @@ function LanguageToggle() {
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
-        <DropdownMenuItem>{t("header.language.english")}</DropdownMenuItem>
-        <DropdownMenuItem>{t("header.language.portuguese")}</DropdownMenuItem>
+        <Twemoji options={{ className: "twemoji" }}>
+          <DropdownMenuItem onClick={() => handleChangeLanguage("en")}>
+            🇺🇸 {t("header.language.english")}
+          </DropdownMenuItem>
+          <DropdownMenuItem onClick={() => handleChangeLanguage("pt")}>
+            🇧🇷 {t("header.language.portuguese")}
+          </DropdownMenuItem>
+        </Twemoji>
       </DropdownMenuContent>
     </DropdownMenu>
   )

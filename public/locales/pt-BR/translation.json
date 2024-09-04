@@ -16,5 +16,63 @@
       "home": "Início",
       "projects": "Projetos"
     }
+  },
+  "notFound": {
+    "404": "404",
+    "pageNotFound": "Oops! Página não encontrada.",
+    "back": "Voltar"
+  },
+  "errorPage": {
+    "oops": "Oops!",
+    "sometingWentWrong": "Algo deu errado."
+  },
+  "home": {
+    "hero": {
+      "title": "Olá, eu sou o Lobo",
+      "subtitle": "Desenvolvedor front-end"
+    },
+    "about": {
+      "title": "Sobre mim",
+      "begin": {
+        "title": "O início",
+        "description": "Tive meu primeiro contato com programação em 2016, através do Arduino, lendo e-books gratuitos na internet. Logo em seguida, decidi aprender Python usando apenas um celular."
+      },
+      "decision": {
+        "title": "A decisão",
+        "description": "Me dediquei exclusivamente ao Python por um longo período, mas percebi que era hora de expandir meu conhecimento. Então, comecei a estudar HTML, CSS e JavaScript."
+      },
+      "progression": {
+        "title": "O progresso",
+        "description": "Desde então, tenho continuado aprendendo, focando principalmente no framework React, além de explorar outras tecnologias."
+      }
+    },
+    "projects": {
+      "title": "Projetos",
+      "viewAll": "Ver todos os projetos",
+      "card": {
+        "seeMore": "Ver mais",
+        "openProject": "Abrir"
+      }
+    },
+    "contact": {
+      "title": "Contato",
+      "card": {
+        "title": "Envie-me um e-mail",
+        "description": "Envie um e-mail para <0>{{email}}</0>, ou preencha o formulário abaixo.",
+        "form": {
+          "subject": {
+            "label": "Assunto",
+            "placeholder": "Digite o assunto",
+            "description": "Escreva um assunto para sua mensagem."
+          },
+          "body": {
+            "label": "Corpo",
+            "placeholder": "Digite o corpo da mensagem",
+            "description": "Escreva sua mensagem aqui."
+          },
+          "send": "Enviar"
+        }
+      }
+    }
   }
 }

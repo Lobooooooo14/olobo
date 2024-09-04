@@ -16,5 +16,63 @@
       "home": "Home",
       "projects": "Projects"
     }
+  },
+  "notFound": {
+    "404": "404",
+    "pageNotFound": "Whoops! Page not found.",
+    "back": "Back"
+  },
+  "errorPage": {
+    "oops": "Oops!",
+    "sometingWentWrong": "Something went wrong."
+  },
+  "home": {
+    "hero": {
+      "title": "Hello, I'm Lobo",
+      "subtitle": "Front-end developer"
+    },
+    "about": {
+      "title": "About",
+      "begin": {
+        "title": "The beginning",
+        "description": "I had my first contact with programming in 2016, through Arduino, reading free e-books on the internet. Shortly afterwards, I decided to learn Python using just a cell phone."
+      },
+      "decision": {
+        "title": "The decision",
+        "description": "I dedicated myself exclusively to Python for a long period, but I realized it was time to expand my knowledge. He was So I started studying HTML, CSS and JavaScript."
+      },
+      "progression": {
+        "title": "The progression",
+        "description": "Since then, I have continued learning, focusing mainly on React framework, in addition to exploring other technologies."
+      }
+    },
+    "projects": {
+      "title": "Projects",
+      "viewAll": "View all projects",
+      "card": {
+        "seeMore": "See More",
+        "openProject": "Open"
+      }
+    },
+    "contact": {
+      "title": "Contact",
+      "card": {
+        "title": "Send me an email",
+        "description": "Send a e-mail to <0>{{email}}</0>, or fill out the form below.",
+        "form": {
+          "subject": {
+            "label": "Subject",
+            "placeholder": "Enter subject",
+            "description": "Write a subject for your message."
+          },
+          "body": {
+            "label": "Body",
+            "placeholder": "Enter body",
+            "description": "Write your message here."
+          },
+          "send": "Send"
+        }
+      }
+    }
   }
 }

@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { useTranslation } from "react-i18next"
 import { useMediaQuery } from "react-responsive"
 import { Link, redirect } from "react-router-dom"
 
@@ -23,10 +24,14 @@ import { useTheme } from "@/components/theme-provider"
 import { projectsList, ProjectListType } from "@/constants/projects-list"
 
 export default function Projects() {
+  const { t } = useTranslation()
+
   return (
     <section id="projects" className="min-h-screen py-16">
       <div className="mb-6 flex w-full flex-col items-center">
-        <h2 className="mb-2 mt-4 text-center text-4xl font-bold">Projetos</h2>
+        <h2 className="mb-2 mt-4 text-center text-4xl font-bold">
+          {t("home.projects.title")}
+        </h2>
         <Separator className="w-1/3" />
       </div>
       <div className="flex justify-center">
@@ -57,7 +62,7 @@ export default function Projects() {
           className="gap-2"
           onClick={() => redirect("/projects")}
         >
-          <Link to="/projects">Visualizar todos os projetos</Link>
+          <Link to="/projects">{t("home.projects.viewAll")}</Link>
         </Button>
       </div>
     </section>
@@ -66,6 +71,7 @@ export default function Projects() {
 
 function ProjectCard({ project }: { project: ProjectListType }) {
   const theme = useTheme()
+  const { t } = useTranslation()
   const [disableReverseColors, setDisableReverseColors] = useState(false)
 
   const isMedium = useMediaQuery({ query: "(max-width: 768px)" })
@@ -164,14 +170,14 @@ function ProjectCard({ project }: { project: ProjectListType }) {
           <div className="flex items-center justify-center gap-4">
             <Button variant="default" className="gap-2">
               <ExpandIcon size={24} />
-              Ver mais
+              {t("home.projects.card.seeMore")}
             </Button>
             <Button
               variant="link"
               className="gap-2"
               onClick={() => window.open(project.url, "_blank")}
             >
-              Abrir
+              {t("home.projects.card.openProject")}
               <ExternalLinkIcon size={24} />
             </Button>
           </div>
@@ -206,14 +212,14 @@ function ProjectCard({ project }: { project: ProjectListType }) {
       <CardFooter className="flex justify-between md:hidden">
         <Button variant="default" className="gap-2">
           <ExpandIcon size={24} />
-          Ver mais
+          {t("home.projects.card.seeMore")}
         </Button>
         <Button
           variant="link"
           className="gap-2"
           onClick={() => window.open(project.url, "_blank")}
         >
-          Abrir
+          {t("home.projects.card.openProject")}
           <ExternalLinkIcon size={24} />
         </Button>
       </CardFooter>

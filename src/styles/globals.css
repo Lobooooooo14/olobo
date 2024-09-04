@@ -87,4 +87,8 @@
   .grid-icon-box {
     @apply flex h-full min-h-12 w-full items-center justify-center p-4 sm:h-40 sm:w-40 md:h-48 md:w-48 lg:h-64 lg:w-64;
   }
+
+  .twemoji {
+    @apply m-1 w-5 lg:w-6;
+  }
 }

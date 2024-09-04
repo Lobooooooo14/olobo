@@ -1,4 +1,5 @@
 import { useForm } from "react-hook-form"
+import { Trans, useTranslation } from "react-i18next"
 
 import { zodResolver } from "@hookform/resolvers/zod"
 import { ExternalLinkIcon, MailIcon } from "lucide-react"
@@ -37,10 +38,14 @@ const formSchema = z.object({
 })
 
 export default function Contact() {
+  const { t } = useTranslation()
+
   return (
     <section id="contact" className="min-h-screen py-16">
       <div className="mb-6 flex w-full flex-col items-center">
-        <h2 className="mb-2 mt-4 text-center text-4xl font-bold">Contato</h2>
+        <h2 className="mb-2 mt-4 text-center text-4xl font-bold">
+          {t("home.contact.title")}
+        </h2>
         <Separator className="w-1/3" />
       </div>
       <div className="flex flex-wrap justify-center gap-4 px-4">
@@ -48,15 +53,16 @@ export default function Contact() {
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
               <MailIcon size={32} />
-              Envie-me um e-mail
+              {t("home.contact.card.title")}
             </CardTitle>
             <CardDescription className="text-pretty leading-relaxed">
-              Envie um email para{" "}
-              <code className="relative rounded bg-muted px-[0.3rem] py-[0.2rem] font-mono text-sm font-semibold">
-                lobooooooo14@gmail.com
-              </code>
-              . Caso utilize o algum cliente de e-mail, você também poderá
-              utilizar o formulário abaixo.
+              <Trans
+                i18nKey="home.contact.card.description"
+                values={{ email: "lobooooooo14@gmail.com" }}
+                components={[
+                  <code className="relative rounded bg-muted px-[0.3rem] py-[0.2rem] font-mono text-sm font-semibold"></code>
+                ]}
+              />
             </CardDescription>
           </CardHeader>
           <CardContent>
@@ -69,6 +75,8 @@ export default function Contact() {
 }
 
 function ProfileForm() {
+  const { t } = useTranslation()
+
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -91,11 +99,16 @@ function ProfileForm() {
           name="subject"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Assunto</FormLabel>
+              <FormLabel>{t("home.contact.card.form.subject.label")}</FormLabel>
               <FormControl>
-                <Input placeholder="Assunto do email" {...field} />
+                <Input
+                  placeholder={t("home.contact.card.form.subject.placeholder")}
+                  {...field}
+                />
               </FormControl>
-              <FormDescription>Escreva o assunto do email.</FormDescription>
+              <FormDescription>
+                {t("home.contact.card.form.subject.description")}
+              </FormDescription>
               <FormMessage />
             </FormItem>
           )}
@@ -105,21 +118,23 @@ function ProfileForm() {
           name="body"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Corpo</FormLabel>
+              <FormLabel>{t("home.contact.card.form.body.label")}</FormLabel>
               <FormControl>
                 <Textarea
-                  placeholder="Corpo do email"
+                  placeholder={t("home.contact.card.form.body.placeholder")}
                   {...field}
                   className="h-48 resize-none"
                 />
               </FormControl>
-              <FormDescription>Escreva o corpo do email.</FormDescription>
+              <FormDescription>
+                {t("home.contact.card.form.body.description")}
+              </FormDescription>
               <FormMessage />
             </FormItem>
           )}
         />
         <Button className="w-full gap-2" type="submit">
-          Enviar <ExternalLinkIcon size={16} />
+          {t("home.contact.card.form.send")} <ExternalLinkIcon size={16} />
         </Button>
       </form>
     </Form>
