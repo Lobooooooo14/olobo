@@ -77,6 +77,10 @@
       }
     }
   },
+  "projects": {
+    "title": "Em breve",
+    "back": "Voltar"
+  },
   "projectsList": {
     "shortStats": {
       "description": "Um simples encurtador de URL."
