@@ -2,6 +2,8 @@ import { useTranslation } from "react-i18next"
 
 import { motion } from "framer-motion"
 
+import { H1, P } from "@/components/typography"
+
 export default function Hero() {
   const { t } = useTranslation()
 
@@ -18,7 +20,7 @@ export default function Hero() {
       <div className="flex h-full items-center justify-center">
         <div className="grid-effect absolute z-[-999] h-full w-full border-b border-r border-border/80"></div>
         <div className="flex h-[90%] max-h-[600px] w-[90%] max-w-[800px] flex-col items-center justify-center">
-          <motion.h1
+          <H1
             initial={{ opacity: 0 }}
             animate={{
               opacity: 1,
@@ -27,11 +29,12 @@ export default function Hero() {
                 duration: 1
               }
             }}
-            className="mb-2 text-pretty bg-black bg-gradient-to-b from-primary/90 to-primary/60 bg-clip-text text-center text-3xl font-extrabold tracking-tight text-transparent md:text-5xl lg:text-6xl"
+            whileInView={{}}
+            className="bg-black bg-gradient-to-b from-primary/90 to-primary/60 bg-clip-text text-center text-transparent"
           >
             {t("home.hero.title")}
-          </motion.h1>
-          <motion.p
+          </H1>
+          <P
             initial={{ opacity: 0, y: 100, letterSpacing: "0.3em" }}
             animate={{
               opacity: 1,
@@ -43,10 +46,11 @@ export default function Hero() {
                 ease: "easeInOut"
               }
             }}
-            className="text-md text-nowrap bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-center font-mono font-bold uppercase tracking-widest text-transparent drop-shadow-[0_0_10px_rgba(34,211,238,0.2)]"
+            whileInView={{}}
+            className="m-0 text-nowrap bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-center font-mono font-bold uppercase tracking-widest text-transparent drop-shadow-[0_0_10px_rgba(34,211,238,0.2)]"
           >
             {t("home.hero.subtitle")}
-          </motion.p>
+          </P>
         </div>
       </div>
     </motion.section>

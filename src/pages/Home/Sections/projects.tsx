@@ -20,6 +20,7 @@ import {
 import { Separator } from "@/components/ui/separator"
 
 import { useTheme } from "@/components/theme-provider"
+import { H2, H3, P } from "@/components/typography"
 
 import { projectsList, ProjectListType } from "@/constants/projects-list"
 
@@ -29,11 +30,10 @@ export default function Projects() {
   return (
     <section id="projects" className="min-h-screen py-16">
       <div className="mb-6 flex w-full flex-col items-center">
-        <h2 className="mb-2 mt-4 text-center text-4xl font-bold">
-          {t("home.projects.title")}
-        </h2>
+        <H2>{t("home.projects.title")}</H2>
         <Separator className="w-1/3" />
       </div>
+
       <div className="flex justify-center">
         <Carousel
           className="w-full max-w-4xl"
@@ -56,6 +56,7 @@ export default function Projects() {
           <CarouselNext className="right-[2rem] opacity-50 lg:right-[-2.5rem]" />
         </Carousel>
       </div>
+
       <div className="mt-6 flex w-full justify-center">
         <Button
           variant="default"
@@ -72,9 +73,9 @@ export default function Projects() {
 function ProjectCard({ project }: { project: ProjectListType }) {
   const theme = useTheme()
   const { t } = useTranslation()
-  const [disableReverseColors, setDisableReverseColors] = useState(false)
-
   const isMedium = useMediaQuery({ query: "(max-width: 768px)" })
+
+  const [disableReverseColors, setDisableReverseColors] = useState(false)
 
   return (
     <Card>
@@ -124,7 +125,9 @@ function ProjectCard({ project }: { project: ProjectListType }) {
           />
         )}
 
+        {/* overlay */}
         <div className="absolute inset-0 hidden flex-col items-center justify-center rounded-lg bg-gradient-to-t from-white/80 to-white/20 opacity-0 backdrop-blur-md transition-opacity hover:opacity-100 dark:from-black/80 dark:to-black/20 md:flex">
+          {/* Invert colors button */}
           <div className="absolute right-1 top-1">
             {project.invertColorsInTheme === theme.themeName && (
               <Button
@@ -144,6 +147,8 @@ function ProjectCard({ project }: { project: ProjectListType }) {
               </Button>
             )}
           </div>
+
+          {/* Badges */}
           <div className="absolute bottom-1 left-1 flex flex-wrap gap-2">
             {project.badges.map((badge) => (
               <Badge
@@ -163,17 +168,20 @@ function ProjectCard({ project }: { project: ProjectListType }) {
             ))}
           </div>
 
-          <h3 className="mb-4 overflow-hidden text-ellipsis text-nowrap text-center text-3xl font-bold tracking-tight text-primary">
+          <H3 className="my-0 overflow-hidden text-ellipsis text-nowrap text-center">
             {project.title}
-          </h3>
-          <p className="mb-4 overflow-hidden text-ellipsis text-nowrap text-center text-sm text-primary/80">
+          </H3>
+          <P className="overflow-hidden text-ellipsis text-nowrap text-center text-sm">
             {t(project.description)}
-          </p>
-          <div className="flex items-center justify-center gap-4">
+          </P>
+
+          {/* Buttons */}
+          <div className="mt-4 flex items-center justify-center gap-4">
             <Button variant="default" className="gap-2">
               <ExpandIcon size={24} />
               {t("home.projects.card.seeMore")}
             </Button>
+
             <Button
               variant="link"
               className="gap-2"
@@ -185,13 +193,17 @@ function ProjectCard({ project }: { project: ProjectListType }) {
           </div>
         </div>
       </AspectRatio>
+
+      {/* Without overlay */}
       <CardContent className="mt-4 md:hidden">
-        <h3 className="mb-4 overflow-hidden text-ellipsis text-nowrap text-center text-3xl font-bold tracking-tight text-primary">
+        <H3 className="my-0 overflow-hidden text-ellipsis text-nowrap text-center">
           {project.title}
-        </h3>
-        <p className="overflow-hidden text-ellipsis text-nowrap text-center text-sm text-primary/80">
-          {project.description}
-        </p>
+        </H3>
+        <P className="overflow-hidden text-ellipsis text-nowrap text-center text-sm">
+          {t(project.description)}
+        </P>
+
+        {/* Badges */}
         <div className="mt-4 flex flex-wrap justify-center gap-1">
           {project.badges.map((badge) => (
             <Badge
@@ -211,11 +223,14 @@ function ProjectCard({ project }: { project: ProjectListType }) {
           ))}
         </div>
       </CardContent>
+
+      {/* Buttons */}
       <CardFooter className="flex justify-between md:hidden">
         <Button variant="default" className="gap-2">
           <ExpandIcon size={24} />
           {t("home.projects.card.seeMore")}
         </Button>
+
         <Button
           variant="link"
           className="gap-2"

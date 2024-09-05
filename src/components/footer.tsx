@@ -1,8 +1,10 @@
+import { P } from "./typography"
+
 export default function Footer() {
   return (
     <footer className="flex h-20 items-center justify-center border-t border-border px-6">
       <div>
-        <p className="text-sm text-muted-foreground">
+        <P className="text-sm text-muted-foreground">
           &copy; {new Date().getFullYear()}{" "}
           <a
             className="hover:underline"
@@ -10,7 +12,7 @@ export default function Footer() {
           >
             Lobooooooo14
           </a>
-        </p>
+        </P>
       </div>
     </footer>
   )

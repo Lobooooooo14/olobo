@@ -20,12 +20,17 @@ import {
   SiSass,
   SiSassHex,
   SiTailwindcss,
-  SiTailwindcssHex
+  SiTailwindcssHex,
+  IconType
 } from "@icons-pack/react-simple-icons"
-import { motion } from "framer-motion"
+import { HTMLMotionProps, motion } from "framer-motion"
 import { transparentize } from "polished"
 
 import { Separator } from "@/components/ui/separator"
+
+import { H2, H3, P } from "@/components/typography"
+
+import { cn } from "@/lib/utils"
 
 export default function About() {
   const { t } = useTranslation()
@@ -33,180 +38,126 @@ export default function About() {
   return (
     <section id="about" className="py-16">
       <div className="mb-6 flex w-full flex-col items-center">
-        <h2 className="mb-2 mt-4 text-center text-4xl font-bold">
-          {t("home.about.title")}
-        </h2>
+        <H2>{t("home.about.title")}</H2>
         <Separator className="w-1/3" />
       </div>
+
       <div className="flex justify-center">
         <div className="grid w-full grid-cols-4 grid-rows-7 gap-[0.3rem] px-[0.3rem] sm:max-w-screen-sm sm:grid-rows-8 sm:gap-0 sm:px-0 md:max-w-screen-md lg:max-w-screen-lg">
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{
-              opacity: 1,
-              transition: { duration: 0.5 }
-            }}
-            className="col-span-4 col-start-1 row-span-1 row-start-1 flex flex-col justify-center p-4 sm:col-span-2 sm:row-span-2"
-          >
-            <h3 className="mb-4 text-center text-3xl font-bold tracking-tight text-primary sm:text-pretty sm:text-left">
+          {/* Begin */}
+          <div className="col-span-4 col-start-1 row-span-1 row-start-1 flex flex-col justify-center p-4 sm:col-span-2 sm:row-span-2">
+            <H3 className="text-center sm:text-pretty sm:text-left">
               {t("home.about.begin.title")}
-            </h3>
-            <p className="text-center text-primary/80 sm:text-pretty sm:text-left">
+            </H3>
+            <P className="text-center sm:text-pretty sm:text-left">
               {t("home.about.begin.description")}
-            </p>
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, scale: 0.5 }}
-            whileInView={{
-              opacity: 1,
-              scale: 1,
-              transition: { stiffness: 0 }
-            }}
-            className="grid-icon-box col-span-2 col-start-1 row-start-2 rounded-lg sm:col-span-1 sm:col-start-4 sm:row-start-1 sm:rounded-none"
-            style={{ background: transparentize(0.92, SiArduinoHex) }}
-          >
-            <SiArduino color={SiArduinoHex} size={64} />
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, scale: 0.5 }}
-            whileInView={{
-              opacity: 1,
-              scale: 1,
-              transition: { stiffness: 0 }
-            }}
-            className="grid-icon-box col-span-2 col-start-3 rounded-lg sm:col-span-1 sm:col-start-3 sm:row-start-2 sm:rounded-none"
-            style={{ background: transparentize(0.92, SiPythonHex) }}
-          >
-            <SiPython color={SiPythonHex} size={64} />
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{
-              opacity: 1,
-              transition: { duration: 0.5 }
-            }}
-            className="col-span-4 col-start-1 row-start-3 flex flex-col justify-center p-4 sm:col-span-2 sm:col-start-3 sm:row-span-2 sm:row-start-3 sm:items-end"
-          >
-            <h3 className="mb-4 text-center text-3xl font-bold tracking-tight text-primary sm:text-pretty sm:text-left">
+            </P>
+          </div>
+
+          <IconBox
+            _icon={SiArduino}
+            color={SiArduinoHex}
+            className="col-span-2 col-start-1 row-start-2 sm:col-span-1 sm:col-start-4 sm:row-start-1"
+          />
+
+          <IconBox
+            _icon={SiPython}
+            color={SiPythonHex}
+            className="col-span-2 col-start-3 sm:col-span-1 sm:col-start-3 sm:row-start-2"
+          />
+
+          {/* Decision */}
+          <div className="col-span-4 col-start-1 row-start-3 flex flex-col justify-center p-4 sm:col-span-2 sm:col-start-3 sm:row-span-2 sm:row-start-3 sm:items-end">
+            <H3 className="text-center sm:text-pretty sm:text-left">
               {t("home.about.decision.title")}
-            </h3>
-            <p className="text-left text-primary/80 sm:text-pretty sm:text-right">
+            </H3>
+            <P className="text-left sm:text-pretty sm:text-right">
               {t("home.about.decision.description")}
-            </p>
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, scale: 0.5 }}
-            whileInView={{
-              opacity: 1,
-              scale: 1,
-              transition: { stiffness: 0 }
-            }}
-            className="grid-icon-box col-start-1 row-start-4 rounded-lg sm:row-start-4 sm:rounded-none"
-            style={{ background: transparentize(0.92, SiHtml5Hex) }}
-          >
-            <SiHtml5 color={SiHtml5Hex} size={64} />
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, scale: 0.5 }}
-            whileInView={{
-              opacity: 1,
-              scale: 1,
-              transition: { stiffness: 0 }
-            }}
-            className="grid-icon-box col-start-4 row-start-4 rounded-lg sm:col-start-2 sm:row-start-5 sm:rounded-none"
-            style={{ background: transparentize(0.92, SiCss3Hex) }}
-          >
-            <SiCss3 color={SiCss3Hex} size={64} />
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, scale: 0.5 }}
-            whileInView={{
-              opacity: 1,
-              scale: 1,
-              transition: { stiffness: 0 }
-            }}
-            className="grid-icon-box col-span-2 col-start-2 row-start-4 rounded-lg sm:col-span-1 sm:col-start-1 sm:row-start-5 sm:rounded-none"
-            style={{ background: transparentize(0.92, SiJavascriptHex) }}
-          >
-            <SiJavascript color={SiJavascriptHex} size={64} />
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{
-              opacity: 1,
-              transition: { duration: 0.5 }
-            }}
-            className="col-span-4 col-start-1 row-start-5 flex flex-col justify-center p-4 sm:col-span-2 sm:col-start-1 sm:row-span-2 sm:row-start-6"
-          >
-            <h3 className="mb-4 text-center text-3xl font-bold tracking-tight text-primary sm:text-pretty sm:text-left">
+            </P>
+          </div>
+
+          <IconBox
+            _icon={SiHtml5}
+            color={SiHtml5Hex}
+            className="col-start-1 row-start-4 sm:row-start-4"
+          />
+
+          <IconBox
+            _icon={SiCss3}
+            color={SiCss3Hex}
+            className="col-start-4 row-start-4 sm:col-start-2 sm:row-start-5"
+          />
+
+          <IconBox
+            _icon={SiJavascript}
+            color={SiJavascriptHex}
+            className="col-span-2 col-start-2 row-start-4 sm:col-span-1 sm:col-start-1 sm:row-start-5"
+          />
+
+          {/* Progression */}
+          <div className="col-span-4 col-start-1 row-start-5 flex flex-col justify-center p-4 sm:col-span-2 sm:col-start-1 sm:row-span-2 sm:row-start-6">
+            <H3 className="text-center sm:text-pretty sm:text-left">
               {t("home.about.progression.title")}
-            </h3>
-            <p className="text-primary/80 sm:text-pretty">
+            </H3>
+            <P className="sm:text-pretty">
               {t("home.about.progression.description")}
-            </p>
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, scale: 0.5 }}
-            whileInView={{
-              opacity: 1,
-              scale: 1,
-              transition: { stiffness: 0 }
-            }}
-            className="grid-icon-box col-span-2 col-start-1 row-start-6 rounded-lg sm:col-span-1 sm:col-start-4 sm:row-start-6 sm:rounded-none"
-            style={{ background: transparentize(0.92, SiTypescriptHex) }}
-          >
-            <SiTypescript color={SiTypescriptHex} size={64} />
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, scale: 0.5 }}
-            whileInView={{
-              opacity: 1,
-              scale: 1,
-              transition: { stiffness: 0 }
-            }}
-            className="grid-icon-box col-span-2 col-start-3 row-start-6 rounded-lg sm:col-span-1 sm:col-start-3 sm:row-start-7 sm:rounded-none"
-            style={{ background: transparentize(0.92, SiReactHex) }}
-          >
-            <SiReact color={SiReactHex} size={64} />
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, scale: 0.5 }}
-            whileInView={{
-              opacity: 1,
-              scale: 1,
-              transition: { stiffness: 0 }
-            }}
-            className="grid-icon-box col-start-1 row-start-7 rounded-lg sm:col-start-1 sm:row-start-8 sm:rounded-none"
-            style={{ background: transparentize(0.92, SiSassHex) }}
-          >
-            <SiSass color={SiSassHex} size={64} />
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, scale: 0.5 }}
-            whileInView={{
-              opacity: 1,
-              scale: 1,
-              transition: { stiffness: 0 }
-            }}
-            className="grid-icon-box col-span-2 row-start-7 rounded-lg sm:col-span-2 sm:col-start-3 sm:row-start-8 sm:rounded-none"
-            style={{ background: transparentize(0.92, SiViteHex) }}
-          >
-            <SiVite color={SiViteHex} size={64} />
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, scale: 0.5 }}
-            whileInView={{
-              opacity: 1,
-              scale: 1,
-              transition: { stiffness: 0 }
-            }}
-            className="grid-icon-box col-start-4 row-start-7 rounded-lg sm:col-start-4 sm:row-start-8 sm:rounded-none"
-            style={{ background: transparentize(0.92, SiTailwindcssHex) }}
-          >
-            <SiTailwindcss color={SiTailwindcssHex} size={64} />
-          </motion.div>
+            </P>
+          </div>
+
+          <IconBox
+            _icon={SiTypescript}
+            color={SiTypescriptHex}
+            className="col-span-2 col-start-1 row-start-6 sm:col-span-1 sm:col-start-4 sm:row-start-6"
+          />
+
+          <IconBox
+            _icon={SiReact}
+            color={SiReactHex}
+            className="col-span-2 col-start-3 row-start-6 sm:col-span-1 sm:col-start-3 sm:row-start-7"
+          />
+
+          <IconBox
+            _icon={SiSass}
+            color={SiSassHex}
+            className="col-start-1 row-start-7 sm:col-start-1 sm:row-start-8"
+          />
+
+          <IconBox
+            _icon={SiVite}
+            color={SiViteHex}
+            className="col-span-2 row-start-7 sm:col-span-2 sm:col-start-3 sm:row-start-8"
+          />
+
+          <IconBox
+            _icon={SiTailwindcss}
+            color={SiTailwindcssHex}
+            className="col-start-4 row-start-7 sm:col-start-4 sm:row-start-8"
+          />
         </div>
       </div>
     </section>
+  )
+}
+
+function IconBox({
+  _icon,
+  color,
+  className,
+  ...rest
+}: HTMLMotionProps<"div"> & { _icon: IconType; color: string }) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, scale: 0.5 }}
+      whileInView={{
+        opacity: 1,
+        scale: 1,
+        transition: { stiffness: 0 }
+      }}
+      style={{ background: transparentize(0.92, color) }}
+      className={cn("grid-icon-box rounded-lg sm:rounded-none", className)}
+      {...rest}
+    >
+      <_icon color={color} size={64} />
+    </motion.div>
   )
 }

@@ -26,6 +26,8 @@ import { Input } from "@/components/ui/input"
 import { Separator } from "@/components/ui/separator"
 import { Textarea } from "@/components/ui/textarea"
 
+import { H2, InlineCode } from "@/components/typography"
+
 const formSchema = z.object({
   subject: z
     .string()
@@ -43,11 +45,10 @@ export default function Contact() {
   return (
     <section id="contact" className="min-h-screen py-16">
       <div className="mb-6 flex w-full flex-col items-center">
-        <h2 className="mb-2 mt-4 text-center text-4xl font-bold">
-          {t("home.contact.title")}
-        </h2>
+        <H2>{t("home.contact.title")}</H2>
         <Separator className="w-1/3" />
       </div>
+
       <div className="flex flex-wrap justify-center gap-4 px-4">
         <Card className="w-full max-w-[600px]">
           <CardHeader>
@@ -59,14 +60,12 @@ export default function Contact() {
               <Trans
                 i18nKey="home.contact.card.description"
                 values={{ email: "lobooooooo14@gmail.com" }}
-                components={[
-                  <code className="relative rounded bg-muted px-[0.3rem] py-[0.2rem] font-mono text-sm font-semibold"></code>
-                ]}
+                components={[<InlineCode></InlineCode>]}
               />
             </CardDescription>
           </CardHeader>
           <CardContent>
-            <ProfileForm />
+            <ContactForm />
           </CardContent>
         </Card>
       </div>
@@ -74,7 +73,7 @@ export default function Contact() {
   )
 }
 
-function ProfileForm() {
+function ContactForm() {
   const { t } = useTranslation()
 
   const form = useForm<z.infer<typeof formSchema>>({

@@ -39,7 +39,7 @@
       },
       "decision": {
         "title": "A decisão",
-        "description": "Me dediquei exclusivamente ao Python por um longo período, mas percebi que era hora de expandir meu conhecimento. Então, comecei a estudar HTML, CSS e JavaScript."
+        "description": "Me dediquei exclusivamente ao Python por um longo período, mas percebi que era hora de expandir meus conhecimentos. Então, comecei a estudar HTML, CSS e JavaScript."
       },
       "progression": {
         "title": "O progresso",
@@ -76,10 +76,6 @@
         }
       }
     }
-  },
-  "projects": {
-    "title": "Em breve",
-    "back": "Voltar"
   },
   "projectsList": {
     "shortStats": {
