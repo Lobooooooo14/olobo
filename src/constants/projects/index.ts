@@ -1,6 +1,5 @@
 import { IconType } from "@icons-pack/react-simple-icons"
 
-import other from "./other"
 import python from "./python"
 import top from "./top"
 import website from "./website"
