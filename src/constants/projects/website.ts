@@ -1,22 +1,14 @@
 import {
-  IconType,
-  SiDiscord,
-  SiDiscordHex,
   SiFirebase,
   SiFirebaseHex,
   SiIonic,
   SiIonicHex,
   SiMui,
   SiMuiHex,
-  SiPypi,
-  SiPypiHex,
-  SiPytest,
-  SiPytestHex,
-  SiPython,
-  SiPythonHex,
   SiReact,
   SiReactHex,
-  SiSphinx,
+  SiShadcnui,
+  SiShadcnuiHex,
   SiTailwindcss,
   SiTailwindcssHex,
   SiTypescript,
@@ -28,48 +20,20 @@ import {
 import ArrozChatPoster from "@/assets/arroz-chat/arroz-chat-poster.png"
 import BibliotecaPocketPoster from "@/assets/biblioteca-pocket/biblioteca-pocket-poster.png"
 import BibliotecaPocketVideo from "@/assets/biblioteca-pocket/biblioteca-pocket-video.mp4"
+import OloboDarkPoster from "@/assets/olobo/olobo-dark-poster.png"
+import OloboLightPoster from "@/assets/olobo/olobo-light-poster.png"
 import ShortStatsDarkPoster from "@/assets/short-stats/short-stats-dark-poster.png"
 import ShortStatsDarkVideo from "@/assets/short-stats/short-stats-dark-video.mp4"
 import ShortStatsLightPoster from "@/assets/short-stats/short-stats-light-poster.png"
 import ShortStatsLightVideo from "@/assets/short-stats/short-stats-light-video.mp4"
-import TempyratureDarkPoster from "@/assets/tempyrature/tempyrature-dark-poster.png"
-import TempyratureLightPoster from "@/assets/tempyrature/tempyrature-light-poster.png"
-import VexpyDarkPoster from "@/assets/vexpy/vexpy-dark-poster.png"
-import VexpyLightPoster from "@/assets/vexpy/vexpy-light-poster.png"
 
-type BadgeType = {
-  id: number
-  name: string
-  icon: IconType
-  iconColor: string
-}
+import { ProjectType } from "."
 
-export type ProjectListType = {
-  id: number
-  title: string
-  description: string
-  url: string
-  invertColorsInTheme?: "light" | "dark"
-  video?: {
-    src?: string
-    dark?: string
-    light?: string
-  }
-  badges: BadgeType[]
-  poster: {
-    src?: string
-    dark?: string
-    light?: string
-  }
-}
-
-export type projectsListType = ProjectListType[]
-
-export const projectsList: projectsListType = [
+const website: ProjectType[] = [
   {
     id: 1,
     title: "Short Stats",
-    description: "projectsList.shortStats.description",
+    description: "projects.sections.websites.shortStats.shortDescription",
     url: "https://s.olobo.xyz/short",
     video: {
       dark: ShortStatsDarkVideo,
@@ -81,13 +45,13 @@ export const projectsList: projectsListType = [
     },
     badges: [
       {
-        id: 2,
+        id: 1,
         name: "React",
         icon: SiReact,
         iconColor: SiReactHex
       },
       {
-        id: 1,
+        id: 2,
         name: "Ionic Framework",
         icon: SiIonic,
         iconColor: SiIonicHex
@@ -121,7 +85,7 @@ export const projectsList: projectsListType = [
   {
     id: 2,
     title: "Biblioteca Pocket",
-    description: "projectsList.bibliotecaPocket.description",
+    description: "projects.sections.websites.bibliotecaPocket.shortDescription",
     url: "https://bpocket-about.vercel.app/",
     invertColorsInTheme: "light",
     video: {
@@ -160,7 +124,7 @@ export const projectsList: projectsListType = [
   {
     id: 3,
     title: "Arroz Chat",
-    description: "projectsList.arrozChat.description",
+    description: "projects.sections.websites.arrozChat.shortDescription",
     url: "https://arroz-chat.vercel.app/",
     invertColorsInTheme: "light",
     poster: {
@@ -195,62 +159,46 @@ export const projectsList: projectsListType = [
   },
   {
     id: 4,
-    title: "Tempyrature",
-    description: "projectsList.tempyrature.description",
-    url: "https://tempyrature.readthedocs.io/en/latest/",
+    title: "O Lobo",
+    description: "projects.sections.websites.olobo.shortDescription",
+    url: "https://olobo.xyz",
     poster: {
-      dark: TempyratureDarkPoster,
-      light: TempyratureLightPoster
+      dark: OloboDarkPoster,
+      light: OloboLightPoster
     },
     badges: [
       {
         id: 1,
-        name: "Python",
-        icon: SiPython,
-        iconColor: SiPythonHex
+        name: "React",
+        icon: SiReact,
+        iconColor: SiReactHex
       },
       {
         id: 2,
-        name: "Pytest",
-        icon: SiPytest,
-        iconColor: SiPytestHex
+        name: "TypeScript",
+        icon: SiTypescript,
+        iconColor: SiTypescriptHex
       },
       {
         id: 3,
-        name: "Pypi",
-        icon: SiPypi,
-        iconColor: SiPypiHex
+        name: "Tailwind",
+        icon: SiTailwindcss,
+        iconColor: SiTailwindcssHex
       },
       {
         id: 4,
-        name: "Sphinx",
-        icon: SiSphinx,
+        name: "Shadcn/ui",
+        icon: SiShadcnui,
         iconColor: "#4e4e4e"
-      }
-    ]
-  },
-  {
-    id: 5,
-    title: "Vex.py",
-    description: "projectsList.vexpy.description",
-    url: "https://github.com/BotVex/Vex.py/",
-    poster: {
-      dark: VexpyDarkPoster,
-      light: VexpyLightPoster
-    },
-    badges: [
-      {
-        id: 1,
-        name: "Python",
-        icon: SiPython,
-        iconColor: SiPythonHex
       },
       {
-        id: 2,
-        name: "Disnake",
-        icon: SiDiscord,
-        iconColor: SiDiscordHex
+        id: 5,
+        name: "Vite",
+        icon: SiVite,
+        iconColor: SiViteHex
       }
     ]
   }
 ]
+
+export default website

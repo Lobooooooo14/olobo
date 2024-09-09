@@ -30,7 +30,7 @@ export default function Hero() {
               }
             }}
             whileInView={{}}
-            className="bg-black bg-gradient-to-b from-primary/90 to-primary/60 bg-clip-text text-center text-transparent"
+            className="bg-black bg-gradient-to-b from-primary/90 to-primary/60 bg-clip-text text-center text-4xl text-transparent md:text-6xl"
           >
             {t("home.hero.title")}
           </H1>

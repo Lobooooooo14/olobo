@@ -10,7 +10,7 @@ export function H1({ children, className, ...rest }: HTMLMotionProps<"h1">) {
         opacity: 1
       }}
       className={cn(
-        "mb-2 mt-4 text-4xl font-extrabold tracking-tight text-primary md:text-5xl lg:text-6xl",
+        "mb-2 mt-4 text-2xl font-extrabold tracking-tight text-primary md:text-4xl",
         className
       )}
       {...rest}
@@ -28,7 +28,7 @@ export function H2({ children, className, ...rest }: HTMLMotionProps<"h2">) {
         opacity: 1
       }}
       className={cn(
-        "mb-2 mt-4 text-3xl font-bold tracking-tight text-primary md:text-4xl lg:text-5xl",
+        "mb-2 mt-4 text-xl font-bold tracking-tight text-primary md:text-2xl",
         className
       )}
       {...rest}
@@ -46,7 +46,7 @@ export function H3({ children, className, ...rest }: HTMLMotionProps<"h3">) {
         opacity: 1
       }}
       className={cn(
-        "mb-4 mt-4 text-2xl font-bold tracking-tight text-primary md:text-3xl lg:text-4xl",
+        "mb-4 mt-4 text-lg font-bold tracking-tight text-primary md:text-xl",
         className
       )}
       {...rest}

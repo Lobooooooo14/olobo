@@ -78,24 +78,32 @@
     }
   },
   "projects": {
-    "title": "Comming soon",
-    "back": "Back"
-  },
-  "projectsList": {
-    "shortStats": {
-      "description": "A simple URL shortener."
-    },
-    "arrozChat": {
-      "description": "A realtime chat with Firebase"
-    },
-    "bibliotecaPocket": {
-      "description": "Landing page for a book app."
-    },
-    "tempyrature": {
-      "description": "A temperature conversion library in Python."
-    },
-    "vexpy": {
-      "description": "A Discord bot made in Python."
+    "title": "Projects",
+    "sections": {
+      "websites": {
+        "title": "Websites",
+        "shortStats": {
+          "shortDescription": "Simple URL shortener with charts"
+        },
+        "arrozChat": {
+          "shortDescription": "Realtime global chat with Firebase"
+        },
+        "bibliotecaPocket": {
+          "shortDescription": "Landing page for a book app"
+        },
+        "olobo": {
+          "shortDescription": "My personal portifolio"
+        }
+      },
+      "python": {
+        "title": "Python",
+        "tempyrature": {
+          "shortDescription": "Temperature conversion library in Python"
+        },
+        "vexpy": {
+          "shortDescription": "Discord bot made in Python"
+        }
+      }
     }
   }
 }
