@@ -8,7 +8,6 @@ import {
   SiReact,
   SiReactHex,
   SiShadcnui,
-  SiShadcnuiHex,
   SiTailwindcss,
   SiTailwindcssHex,
   SiTypescript,
