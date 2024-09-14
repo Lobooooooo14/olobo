@@ -4,7 +4,13 @@ import Twemoji from "react-twemoji"
 
 import { SiGithub } from "@icons-pack/react-simple-icons"
 import { motion } from "framer-motion"
-import { LanguagesIcon, MenuIcon, MoonIcon, SunIcon } from "lucide-react"
+import {
+  LanguagesIcon,
+  MenuIcon,
+  MonitorIcon,
+  MoonIcon,
+  SunIcon
+} from "lucide-react"
 
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Button } from "@/components/ui/button"
@@ -84,13 +90,18 @@ function ThemeToggle() {
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
-        <DropdownMenuItem onClick={() => setTheme("light")}>
+        <DropdownMenuItem className="gap-2" onClick={() => setTheme("light")}>
+          <SunIcon size={16} />
           {t("header.theme.light")}
         </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setTheme("dark")}>
+
+        <DropdownMenuItem className="gap-2" onClick={() => setTheme("dark")}>
+          <MoonIcon size={16} />
           {t("header.theme.dark")}
         </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setTheme("system")}>
+
+        <DropdownMenuItem className="gap-2" onClick={() => setTheme("system")}>
+          <MonitorIcon size={16} />
           {t("header.theme.system")}
         </DropdownMenuItem>
       </DropdownMenuContent>
@@ -115,10 +126,19 @@ function LanguageToggle() {
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
         <Twemoji options={{ className: "twemoji" }}>
-          <DropdownMenuItem onClick={() => handleChangeLanguage("en-US")}>
+          <DropdownMenuItem
+            className="gap-2"
+            onClick={() => handleChangeLanguage("en-US")}
+          >
+            <span>🇺🇸</span>
             {t("header.language.english")}
           </DropdownMenuItem>
-          <DropdownMenuItem onClick={() => handleChangeLanguage("pt-BR")}>
+
+          <DropdownMenuItem
+            className="gap-2"
+            onClick={() => handleChangeLanguage("pt-BR")}
+          >
+            <span>🇧🇷</span>
             {t("header.language.portuguese")}
           </DropdownMenuItem>
         </Twemoji>
