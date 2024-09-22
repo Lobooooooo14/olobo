@@ -12,7 +12,6 @@ import {
 import { Separator } from "@/components/ui/separator"
 
 import ProjectCard from "@/components/project-card"
-import { H1, H2 } from "@/components/typography"
 
 import { projects, ProjectType } from "@/constants"
 import { cn } from "@/lib/utils"
@@ -23,10 +22,11 @@ export default function Projects() {
   return (
     <main className="flex flex-col items-center p-4 lg:p-8">
       <div className="w-full max-w-6xl">
-        <H1 className="m-0 mb-4 w-full">{t("projects.title")}</H1>
+        <h1 className="m-0 mb-4 w-full">{t("projects.title")}</h1>
         <Separator className="mb-4" />
-        {projects.sections.map((section) => (
+        {projects.sections.map((section, index) => (
           <ProjectSection
+            key={index}
             name={t(section.name)}
             sectionProjects={section.items}
           />
@@ -52,7 +52,7 @@ export function ProjectSection({
 
   return (
     <section className={cn("mb-12", className)} {...rest}>
-      <H2 className="m-0 mb-4">{name}</H2>
+      <h2 className="m-0 mb-4">{name}</h2>
       <Carousel
         className="w-full"
         opts={{

@@ -20,7 +20,6 @@ import { Separator } from "@/components/ui/separator"
 import ProjectCard from "@/components/project-card"
 import TechBadge from "@/components/tech-badge"
 import { useTheme } from "@/components/theme-provider"
-import { H2, H3, P } from "@/components/typography"
 
 import { projects, ProjectType } from "@/constants"
 
@@ -31,7 +30,7 @@ export default function Projects() {
   return (
     <section id="projects" className="min-h-screen py-16">
       <div className="mb-6 flex w-full flex-col items-center">
-        <H2>{t("home.projects.title")}</H2>
+        <h2>{t("home.projects.title")}</h2>
         <Separator className="w-1/3" />
       </div>
 
@@ -172,12 +171,12 @@ function CustomProjectCard({
             ))}
           </div>
 
-          <H3 className="my-0 overflow-hidden text-ellipsis text-nowrap text-center">
+          <h3 className="my-0 overflow-hidden text-ellipsis text-nowrap text-center">
             {project.title}
-          </H3>
-          <P className="overflow-hidden text-ellipsis text-nowrap text-center text-sm">
+          </h3>
+          <p className="overflow-hidden text-ellipsis text-nowrap text-center text-sm">
             {t(project.description)}
-          </P>
+          </p>
 
           {/* Buttons */}
           <div className="mt-4 flex items-center justify-center gap-4">

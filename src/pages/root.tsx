@@ -11,6 +11,7 @@ import {
 
 import Footer from "@/components/footer"
 import Header, { Buttons, Navbar } from "@/components/header"
+import SmoothScroll from "@/components/smooth-scroll"
 
 export default function Root() {
   return (
@@ -24,9 +25,14 @@ export default function Root() {
         <Separator />
         <Buttons className="mt-4 gap-1" />
       </SheetContent>
-      <Header />
-      <Outlet />
-      <Footer />
+
+      <SmoothScroll>
+        <Header />
+        <main>
+          <Outlet />
+        </main>
+        <Footer />
+      </SmoothScroll>
     </Sheet>
   )
 }

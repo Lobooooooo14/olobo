@@ -42,7 +42,7 @@ export default function Header() {
     <motion.header
       initial={{ opacity: 0, y: -60 }}
       animate={{ opacity: 1, y: 0, transition: { delay: 1, duration: 0.4 } }}
-      className="sticky top-0 z-50 flex h-16 w-full items-center justify-between gap-4 border-border/40 bg-background/95 px-8 py-2 backdrop-blur supports-[backdrop-filter]:bg-background/60"
+      className="sticky top-0 z-50 flex h-16 w-full items-center justify-between gap-4 border-border/40 bg-background/95 px-2 py-2 backdrop-blur supports-[backdrop-filter]:bg-background/60 sm:px-8"
     >
       <div className="flex items-center gap-4">
         <a
@@ -125,7 +125,7 @@ function LanguageToggle() {
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
-        <Twemoji options={{ className: "twemoji" }}>
+        <Twemoji options={{ className: "m-1 w-5" }}>
           <DropdownMenuItem
             className="gap-2"
             onClick={() => handleChangeLanguage("en-US")}

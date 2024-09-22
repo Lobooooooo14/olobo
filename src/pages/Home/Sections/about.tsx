@@ -28,8 +28,6 @@ import { transparentize } from "polished"
 
 import { Separator } from "@/components/ui/separator"
 
-import { H2, H3, P } from "@/components/typography"
-
 import { cn } from "@/lib/utils"
 
 export default function About() {
@@ -38,7 +36,7 @@ export default function About() {
   return (
     <section id="about" className="py-16">
       <div className="mb-6 flex w-full flex-col items-center">
-        <H2 className="text-2xl">{t("home.about.title")}</H2>
+        <h2>{t("home.about.title")}</h2>
         <Separator className="w-1/3" />
       </div>
 
@@ -46,12 +44,12 @@ export default function About() {
         <div className="grid w-full grid-cols-4 grid-rows-7 gap-[0.3rem] px-[0.3rem] sm:max-w-screen-sm sm:grid-rows-8 sm:gap-0 sm:px-0 md:max-w-screen-md lg:max-w-screen-lg">
           {/* Begin */}
           <div className="col-span-4 col-start-1 row-span-1 row-start-1 flex flex-col justify-center p-4 sm:col-span-2 sm:row-span-2">
-            <H3 className="text-center text-xl sm:text-pretty sm:text-left">
+            <h3 className="text-center sm:text-left">
               {t("home.about.begin.title")}
-            </H3>
-            <P className="text-center sm:text-pretty sm:text-left">
+            </h3>
+            <p className="text-center sm:text-left">
               {t("home.about.begin.description")}
-            </P>
+            </p>
           </div>
 
           <IconBox
@@ -68,12 +66,12 @@ export default function About() {
 
           {/* Decision */}
           <div className="col-span-4 col-start-1 row-start-3 flex flex-col justify-center p-4 sm:col-span-2 sm:col-start-3 sm:row-span-2 sm:row-start-3 sm:items-end">
-            <H3 className="text-center text-xl sm:text-pretty sm:text-left">
+            <h3 className="text-center sm:text-left">
               {t("home.about.decision.title")}
-            </H3>
-            <P className="text-left sm:text-pretty sm:text-right">
+            </h3>
+            <p className="text-center sm:text-right">
               {t("home.about.decision.description")}
-            </P>
+            </p>
           </div>
 
           <IconBox
@@ -94,14 +92,14 @@ export default function About() {
             className="col-span-2 col-start-2 row-start-4 sm:col-span-1 sm:col-start-1 sm:row-start-5"
           />
 
-          {/* Progression */}
+          {/* progression */}
           <div className="col-span-4 col-start-1 row-start-5 flex flex-col justify-center p-4 sm:col-span-2 sm:col-start-1 sm:row-span-2 sm:row-start-6">
-            <H3 className="text-center text-xl sm:text-pretty sm:text-left">
+            <h3 className="text-center sm:text-left">
               {t("home.about.progression.title")}
-            </H3>
-            <P className="sm:text-pretty">
+            </h3>
+            <p className="text-center sm:text-left">
               {t("home.about.progression.description")}
-            </P>
+            </p>
           </div>
 
           <IconBox
@@ -154,7 +152,10 @@ function IconBox({
         transition: { stiffness: 0 }
       }}
       style={{ background: transparentize(0.92, color) }}
-      className={cn("grid-icon-box rounded-lg sm:rounded-none", className)}
+      className={cn(
+        "flex h-full min-h-12 w-full items-center justify-center rounded-lg p-4 sm:h-40 sm:w-40 sm:rounded-none md:h-48 md:w-48 lg:h-64 lg:w-64",
+        className
+      )}
       {...rest}
     >
       <_icon color={color} size={64} />

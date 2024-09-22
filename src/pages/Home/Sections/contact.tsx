@@ -26,7 +26,7 @@ import { Input } from "@/components/ui/input"
 import { Separator } from "@/components/ui/separator"
 import { Textarea } from "@/components/ui/textarea"
 
-import { H2, InlineCode } from "@/components/typography"
+import { InlineCode } from "@/components/typography"
 
 const formSchema = z.object({
   subject: z
@@ -45,7 +45,7 @@ export default function Contact() {
   return (
     <section id="contact" className="min-h-screen py-16">
       <div className="mb-6 flex w-full flex-col items-center">
-        <H2>{t("home.contact.title")}</H2>
+        <h2>{t("home.contact.title")}</h2>
         <Separator className="w-1/3" />
       </div>
 

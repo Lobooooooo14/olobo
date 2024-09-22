@@ -28,6 +28,7 @@
   },
   "home": {
     "hero": {
+      "pre-title": "Olá, eu sou o Gabriel Lobo",
       "title": "Olá, eu sou o Lobo",
       "subtitle": "Desenvolvedor front-end"
     },
@@ -79,6 +80,7 @@
   },
   "projects": {
     "title": "Projetos",
+    "inDevelopment": "Opa! Esta área em desenvolvimento. Tente novamente mais tarde!",
     "sections": {
       "websites": {
         "title": "Sites",
@@ -96,7 +98,7 @@
         }
       },
       "python": {
-        "title": "Python",
+        "title": "Projetos em Python",
         "tempyrature": {
           "shortDescription": "Biblioteca de conversão de temperatura em Python"
         },

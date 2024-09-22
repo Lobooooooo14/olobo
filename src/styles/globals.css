@@ -66,29 +66,42 @@
   body {
     @apply bg-background text-foreground;
   }
-}
 
-@layer components {
-  .grid-effect {
-    background-size: calc(100% / 50) calc(100% / 10);
-    background-image: linear-gradient(
-        to right,
-        hsl(var(--border) / 0.8) calc(100% / 20),
-        transparent 1px
-      ),
-      linear-gradient(
-        to bottom,
-        hsl(var(--border) / 0.8) calc(100% / 80),
-        transparent 1px
-      );
-    mask-image: radial-gradient(circle at 50% 50%, black, transparent);
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p {
+    @apply mb-2 mt-4 text-balance break-words font-bold leading-tight tracking-tight;
   }
 
-  .grid-icon-box {
-    @apply flex h-full min-h-12 w-full items-center justify-center p-4 sm:h-40 sm:w-40 md:h-48 md:w-48 lg:h-64 lg:w-64;
+  h1 {
+    @apply text-5xl font-extrabold;
   }
 
-  .twemoji {
-    @apply m-1 w-5;
+  h2 {
+    @apply text-3xl;
+  }
+
+  h3 {
+    @apply text-2xl;
+  }
+
+  h4 {
+    @apply text-xl;
+  }
+
+  h5 {
+    @apply text-lg;
+  }
+
+  h6 {
+    @apply text-base;
+  }
+
+  p {
+    @apply my-2 text-base font-medium tracking-normal text-primary/80;
   }
 }
