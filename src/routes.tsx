@@ -1,14 +1,35 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
 
-import Construction from "@/pages/construction"
+import Home from "@/pages/Home"
+import ErrorPage from "@/pages/error"
+import NotFound from "@/pages/not-found"
+import Projects from "@/pages/projects"
+import Root from "@/pages/root"
+
+import Loading from "./components/loading"
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Construction />
+    element: <Root />,
+    errorElement: <ErrorPage />,
+    children: [
+      {
+        path: "/",
+        element: <Home />
+      },
+      {
+        path: "/projects",
+        element: <Projects />
+      }
+    ]
+  },
+  {
+    path: "*",
+    element: <NotFound />
   }
 ])
 
 export default function Routes() {
-  return <RouterProvider router={router} />
+  return <RouterProvider router={router} fallbackElement={<Loading expand />} />
 }

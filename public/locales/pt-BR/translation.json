@@ -1,0 +1,111 @@
+{
+  "header": {
+    "name": "Lobo",
+    "theme": {
+      "dark": "Escuro",
+      "light": "Claro",
+      "system": "Sistema",
+      "changeTheme": "Mudar tema"
+    },
+    "language": {
+      "changeLanguage": "Mudar idioma",
+      "english": "Inglês",
+      "portuguese": "Português"
+    },
+    "navbar": {
+      "home": "Início",
+      "projects": "Projetos"
+    }
+  },
+  "notfound": {
+    "404": "404",
+    "pageNotFound": "Oops! Página não encontrada.",
+    "back": "Voltar"
+  },
+  "errorage": {
+    "oops": "Oops!",
+    "somethingWentWrong": "Algo deu errado."
+  },
+  "home": {
+    "hero": {
+      "pre-title": "Olá, eu sou o Gabriel Lobo",
+      "title": "Olá, eu sou o Lobo",
+      "subtitle": "Desenvolvedor front-end"
+    },
+    "about": {
+      "title": "Sobre mim",
+      "begin": {
+        "title": "O início",
+        "description": "Tive meu primeiro contato com programação em 2016, através do Arduino, lendo e-books gratuitos na internet. Logo em seguida, decidi aprender Python usando apenas um celular."
+      },
+      "decision": {
+        "title": "A decisão",
+        "description": "Me dediquei exclusivamente ao Python por um longo período, mas percebi que era hora de expandir meus conhecimentos. Então, comecei a estudar HTML, CSS e JavaScript."
+      },
+      "progression": {
+        "title": "O progresso",
+        "description": "Desde então, tenho continuado aprendendo, focando principalmente no framework React, além de explorar outras tecnologias."
+      }
+    },
+    "projects": {
+      "title": "Projetos",
+      "viewAll": "Ver todos os projetos",
+      "card": {
+        "seeMore": "Ver mais",
+        "openProject": "Abrir",
+        "invertColors": "Cores invertidas. Clique para desativar",
+        "originalColors": "Cores originais. Clique para inverter"
+      }
+    },
+    "contact": {
+      "title": "Contato",
+      "card": {
+        "title": "Envie-me um e-mail",
+        "description": "Envie um e-mail para <0>{{email}}</0>, ou preencha o formulário abaixo.",
+        "form": {
+          "subject": {
+            "label": "Assunto",
+            "placeholder": "Digite o assunto",
+            "description": "Escreva um assunto para sua mensagem."
+          },
+          "body": {
+            "label": "Corpo",
+            "placeholder": "Digite o corpo da mensagem",
+            "description": "Escreva sua mensagem aqui."
+          },
+          "send": "Enviar"
+        }
+      }
+    }
+  },
+  "projects": {
+    "title": "Projetos",
+    "inDevelopment": "Opa! Esta área em desenvolvimento. Tente novamente mais tarde!",
+    "sections": {
+      "websites": {
+        "title": "Sites",
+        "shortStats": {
+          "shortDescription": "Simples encurtador de URL com gráficos"
+        },
+        "arrozChat": {
+          "shortDescription": "Chat em tempo real usando Firebase"
+        },
+        "bibliotecaPocket": {
+          "shortDescription": "Landing page para um app de livros"
+        },
+        "olobo": {
+          "shortDescription": "Meu portfólio pessoal"
+        }
+      },
+      "python": {
+        "title": "Projetos em Python",
+        "tempyrature": {
+          "shortDescription": "Biblioteca de conversão de temperatura em Python"
+        },
+        "vexpy": {
+          "shortDescription": "Bot de Discord feito em Python"
+        }
+      }
+    }
+  }
+}

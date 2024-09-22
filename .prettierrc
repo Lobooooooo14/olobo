@@ -5,15 +5,17 @@
   "singleQuote": false,
   "printWidth": 80,
   "endOfLine": "lf",
-  "plugins": ["@trivago/prettier-plugin-sort-imports"],
+  "plugins": [
+    "@trivago/prettier-plugin-sort-imports",
+    "prettier-plugin-tailwindcss"
+  ],
   "importOrder": [
     "^react(.*)",
-    "^@ionic(.*)",
-    "^@capacitor(.*)",
     "<THIRD_PARTY_MODULES>",
     "^@/hooks(.*)",
     "^@/store(.*)",
     "^@/services(.*)",
+    "^@/components/ui(.*)",
     "^@/components(.*)",
     "@/(.*)",
     "^[./]"
