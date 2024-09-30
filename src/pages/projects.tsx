@@ -1,4 +1,4 @@
-import { HTMLAttributes } from "react"
+import { HTMLAttributes, useEffect, useState } from "react"
 import { useTranslation } from "react-i18next"
 import { useMediaQuery } from "react-responsive"
 
@@ -11,28 +11,44 @@ import {
 } from "@/components/ui/carousel"
 import { Separator } from "@/components/ui/separator"
 
+import Loading from "@/components/loading"
+import MainWrapper from "@/components/main-wrapper"
 import ProjectCard from "@/components/project-card"
 
-import { projects, ProjectType } from "@/constants"
+import { ProjectType, ProjectsType } from "@/content/projects"
 import { cn } from "@/lib/utils"
 
 export default function Projects() {
-  const { t } = useTranslation()
+  const { t } = useTranslation("pages/projects")
+  const [projects, setProjects] = useState<ProjectsType | null>(null)
+
+  useEffect(() => {
+    const loadProjects = async () => {
+      const projectsInstance = await import("@/content/projects")
+      setProjects(projectsInstance.default)
+    }
+
+    loadProjects()
+  }, [])
+
+  if (!projects) return <Loading expand />
 
   return (
-    <main className="flex flex-col items-center p-4 lg:p-8">
-      <div className="w-full max-w-6xl">
-        <h1 className="m-0 mb-4 w-full">{t("projects.title")}</h1>
-        <Separator className="mb-4" />
-        {projects.sections.map((section, index) => (
-          <ProjectSection
-            key={index}
-            name={t(section.name)}
-            sectionProjects={section.items}
-          />
-        ))}
+    <MainWrapper>
+      <div className="flex flex-col items-center p-4 lg:p-8">
+        <div className="w-full max-w-6xl">
+          <h1 className="m-0 mb-4 w-full">{t("title")}</h1>
+          <Separator className="mb-4" />
+          {Object.entries(projects).map(([sectionKey, sectionData]) => (
+            <ProjectSection
+              key={sectionKey}
+              name={t(sectionData.name)}
+              sectionProjects={sectionData.items}
+            />
+          ))}
+        </div>
       </div>
-    </main>
+    </MainWrapper>
   )
 }
 
@@ -62,7 +78,10 @@ export function ProjectSection({
       >
         <CarouselContent className="items-center">
           {sectionProjects.map((project) => (
-            <CarouselItem key={project.id} className="basis-full md:basis-1/2">
+            <CarouselItem
+              key={project.slug}
+              className="basis-full md:basis-1/2"
+            >
               <ProjectCard project={project} />
             </CarouselItem>
           ))}

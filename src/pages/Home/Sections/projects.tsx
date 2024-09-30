@@ -1,7 +1,7 @@
-import { HTMLAttributes, useState } from "react"
+import { HTMLAttributes, useEffect, useState } from "react"
 import { useTranslation } from "react-i18next"
 import { useMediaQuery } from "react-responsive"
-import { Link, redirect } from "react-router-dom"
+import { Link, redirect, useNavigate } from "react-router-dom"
 
 import { AspectRatio } from "@radix-ui/react-aspect-ratio"
 import { ExpandIcon, ExternalLinkIcon, TriangleAlertIcon } from "lucide-react"
@@ -17,20 +17,40 @@ import {
 } from "@/components/ui/carousel"
 import { Separator } from "@/components/ui/separator"
 
+import Loading from "@/components/loading"
 import ProjectCard from "@/components/project-card"
-import TechBadge from "@/components/tech-badge"
 import { useTheme } from "@/components/theme-provider"
 
-import { projects, ProjectType } from "@/constants"
+import { ProjectType } from "@/content/projects"
 
 export default function Projects() {
-  const { t } = useTranslation()
+  const { t } = useTranslation("pages/home")
   const isMedium = useMediaQuery({ query: "(max-width: 768px)" })
+
+  const [topProjects, setTopProjects] = useState<ProjectType[] | null>(null)
+
+  useEffect(() => {
+    const loadAllProjects = async () => {
+      const projects = await import("@/content/projects")
+      const topProjects = Object.values(projects.default)
+        .flatMap(({ items }) => items)
+        .filter((project) => project.top)
+        .reverse()
+
+      setTopProjects(topProjects)
+    }
+
+    loadAllProjects()
+  }, [])
+
+  if (!topProjects) return <Loading expand />
+
+  if (topProjects.length === 0) return
 
   return (
     <section id="projects" className="min-h-screen py-16">
       <div className="mb-6 flex w-full flex-col items-center">
-        <h2>{t("home.projects.title")}</h2>
+        <h2>{t("projects.title")}</h2>
         <Separator className="w-1/3" />
       </div>
 
@@ -43,9 +63,9 @@ export default function Projects() {
           }}
         >
           <CarouselContent className="items-center">
-            {projects.top.map((project) => (
+            {topProjects.map((project) => (
               <CarouselItem
-                key={project.id}
+                key={project.slug}
                 className="basis-[80%] sm:basis-[90%] lg:basis-[100%]"
               >
                 {isMedium ? (
@@ -56,7 +76,7 @@ export default function Projects() {
               </CarouselItem>
             ))}
           </CarouselContent>
-          {projects.top.length > 1 && (
+          {topProjects.length > 1 && (
             <>
               <CarouselPrevious className="left-[1rem] opacity-50 xl:left-[-2.5rem]" />
               <CarouselNext className="right-[1rem] opacity-50 xl:right-[-2.5rem]" />
@@ -71,7 +91,7 @@ export default function Projects() {
           className="gap-2"
           onClick={() => redirect("/projects")}
         >
-          <Link to="/projects">{t("home.projects.viewAll")}</Link>
+          <Link to="/projects">{t("projects.viewAll")}</Link>
         </Button>
       </div>
     </section>
@@ -83,8 +103,9 @@ function CustomProjectCard({
   ...rest
 }: { project: ProjectType } & HTMLAttributes<HTMLDivElement>) {
   const theme = useTheme()
-  const { t } = useTranslation()
+  const { t } = useTranslation(["pages/home", "projects", "common"])
   const isMedium = useMediaQuery({ query: "(max-width: 768px)" })
+  const navigate = useNavigate()
 
   const [disableReverseColors, setDisableReverseColors] = useState(false)
 
@@ -152,37 +173,29 @@ function CustomProjectCard({
                 />
                 {t(
                   !disableReverseColors
-                    ? "home.projects.card.invertColors"
-                    : "home.projects.card.originalColors"
+                    ? "projects.card.invertColors"
+                    : "projects.card.originalColors"
                 )}
               </Button>
             )}
-          </div>
-
-          {/* Badges */}
-          <div className="absolute bottom-1 left-1 flex flex-wrap gap-2">
-            {project.badges.map((badge) => (
-              <TechBadge
-                key={badge.id}
-                _icon={badge.icon}
-                color={badge.iconColor}
-                name={badge.name}
-              />
-            ))}
           </div>
 
           <h3 className="my-0 overflow-hidden text-ellipsis text-nowrap text-center">
             {project.title}
           </h3>
           <p className="overflow-hidden text-ellipsis text-nowrap text-center text-sm">
-            {t(project.description)}
+            {t(project.shortDescription, { ns: "projects" })}
           </p>
 
           {/* Buttons */}
           <div className="mt-4 flex items-center justify-center gap-4">
-            <Button variant="default" className="gap-2">
+            <Button
+              variant="default"
+              className="gap-2"
+              onClick={() => navigate(`/projects/${project.slug}`)}
+            >
               <ExpandIcon size={24} />
-              {t("home.projects.card.seeMore")}
+              {t("seeMore", { ns: "common" })}
             </Button>
 
             <Button
@@ -190,7 +203,7 @@ function CustomProjectCard({
               className="gap-2"
               onClick={() => window.open(project.url, "_blank")}
             >
-              {t("home.projects.card.openProject")}
+              {t("open", { ns: "common" })}
               <ExternalLinkIcon size={24} />
             </Button>
           </div>

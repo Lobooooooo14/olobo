@@ -1,0 +1,26 @@
+{
+  "shortStats": {
+    "shortDescription": "Simple URL shortener with charts",
+    "description": "## What is {{name}}?\n\n**{{name}}** is a simple URL shortener that allows users to create and share custom short URLs. It also includes charts displaying the number of clicks, as well as information about the devices and operating systems used to access the links.\n\n## How did it start?\n\nThe project started during a high school *entrepreneurial projects* assignment, where we were allowed to develop software in general.\n\nThe maximum deadline for delivering the project was one month. {{name}} was fully developed within this time, with more focus on weekends when I had more free time. I chose to use **Firebase** as the backend and the **Ionic Framework** for the interface framework, considering the short timeframe, as these tools speed up development and make integration easier. For the charts, I used **MUI charts** to match the design of the Ionic Framework (material design)."
+  },
+  "arrozChat": {
+    "shortDescription": "Realtime global chat with Firebase",
+    "description": "## What is {{name}}?\n\n**{{name}}** was a real-time global chat project developed to learn React and test Firebase functionalities. It allows users to chat from anywhere in the world, using Firebase's authentication tools and real-time database.\n\n## About the project\n\nThe project is a reimplementation of [@cookieukw/ArrozChatMaster](https://github.com/cookieukw/ArrozChatMaster/), with the goal of exploring **Firebase** alongside **React**, **Styled Components**, **i18next** and **Vite**.\n\nThis was my first \"big\" project using React, as well as my first experience with Firebase, Framer Motion and i18next. The code isn't the best since I was still learning.\n\nI developed Arroz Chat during high school as part of a group project, where we had to create a product. Although it could have been just an idea, we decided to build something real. We had one week for the development: one member made the logo, another helped with the colors and design, and I programmed everything. I built the whole foundation in 3 days and spent the remaining time refining the project."
+  },
+  "bibliotecaPocket": {
+    "shortDescription": "Landing page for a book app",
+    "description": "## What is {{name}}?\n\n{{name}} is an application developed by [@cookieukw](https://github.com/cookieukw) that performs *web scrapping* on the website [Domain Público](http://www.dominiopublico.gov.br/pesquisa/PesquisaObraForm.jsp) through an [API](https://github.com/cookieukw/PocketLibraryAPI) developed by the same.\n\n## My participation\n\n[@cookieukw](https://github.com/cookieukw) asked for my help to develop the project page. The project was built with **React**, **TypeScript**, **Tailwindcss**, **Framer Motion** and **Vite**. In addition to integration with the GitHub API. This project was my first time using Tailwindcss."
+  },
+  "olobo": {
+    "shortDescription": "My personal portifolio",
+    "description": "## what is \"{{name}}\"?\n\n\"{{name}}\" is my personal portfolio, which was developed with **React**, **TypeScript**, **Tailwindcss**, **Shadcn/ui**, **Framer Motion**, **i18next** and **Vite**. This project is my first project using Shadcn/ui."
+  },
+  "tempyrature": {
+    "shortDescription": "Temperature conversion library in Python",
+    "description": "## What is {{name}}?\n\n{{name}} is a simple temperature conversion library in Python. Supports **Celcius**, **Farhenheit**, **Kelvin** and **Rankine**.\n\n## Motivation\n\nThe library was created to learn about **Pypi**, documentation with **Sphinx** and tests with **Pytest**."
+  },
+  "vexpy": {
+    "shortDescription": "Discord bot made in Python",
+    "description": "## What is {{name}}?\n\n{{name}} is a Discord bot made in Python using the [disnake](https://docs.disnake.dev/) library. The bot has several commands for fun and entertainment, such as image manipulation and roleplay events, but it also has some other tools, such as QR code creation, viewing server and user data, and temperature conversion through [another project]( /projects/tempyrature)."
+  }
+}

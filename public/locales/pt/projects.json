@@ -1,0 +1,26 @@
+{
+  "shortStats": {
+    "shortDescription": "Simples encurtador de URL com gráficos",
+    "description": "## O que é {{name}}?\n\n**{{name}}** é um simples encurtador de URL que permite aos usuários criar e compartilhar URLs curtas personalizadas. Ele também inclui gráficos que mostram o número de cliques, além de informações sobre os dispositivos e sistemas operacionais usados para acessar os links.\n\n## Como começou?\n\nO projeto começou durante um trabalho de *projetos empreendedores* no ensino médio, que foi permitido desenvolver um software em geral.\n\nO prazo máximo para entrega do projeto era de um mês. {{name}} foi totalmente desenvolvido dentro desse tempo, com maior foco nos finais de semana, quando eu tinha mais tempo livre. Escolhi usar o **Firebase** como backend e o **Ionic Framework** como framework de interface, considerando o curto período de tempo, pois essas ferramentas aceleram o desenvolvimento e facilitam a integração. Para os gráficos, usei **MUI charts** para combinar com o design do Ionic Framework (material design)."
+  },
+  "arrozChat": {
+    "shortDescription": "Chat global em tempo real com Firebase",
+    "description": "## O que é {{name}}?\n\n**{{name}}** foi um projeto de chat global em tempo real desenvolvido para aprender React e testar as funcionalidades do Firebase. Ele permite que os usuários conversem de qualquer lugar do mundo, usando as ferramentas de autenticação e banco de dados em tempo real do Firebase.\n\n## Sobre o projeto\n\nO projeto é uma reimplementação de [@cookieukw/ArrozChatMaster](https://github.com/cookieukw/ArrozChatMaster/), com o objetivo de explorar o **Firebase** junto com **React**, **Styled Components**, **i18next** e **Vite**.\n\nEste foi meu primeiro \"grande\" projeto usando React, assim como minha primeira experiência com Firebase, Framer Motion e i18next. O código não é dos melhores, já que eu ainda estava aprendendo.\n\nDesenvolvi o Arroz Chat durante o ensino médio como parte de um trabalho em grupo, onde precisávamos criar um produto. Embora pudesse ter sido apenas uma ideia, decidimos criar algo real. Tivemos uma semana para o desenvolvimento: um membro fez a logo, outro ajudou com as cores e design, e eu programei tudo. Fiz toda a base em 3 dias e passei o tempo restante refinando o projeto."
+  },
+  "bibliotecaPocket": {
+    "shortDescription": "Landing page para um app de livros",
+    "description": "## O que é {{name}}?\n\n{{name}} é uma aplicação desenvolvida por [@cookieukw](https://github.com/cookieukw) que realiza *web scrapping* no site [Domínio Público](http://www.dominiopublico.gov.br/pesquisa/PesquisaObraForm.jsp) por meio de uma [API](https://github.com/cookieukw/PocketLibraryAPI) desenvolvida pelo mesmo.\n\n## Minha participação\n\n[@cookieukw](https://github.com/cookieukw) pediu a minha ajuda para desenvolver a página o projeto. O projeto foi contruido com **React**, **TypeScript**, **Tailwindcss**, **Framer Motion** e **Vite**. Além de integração com a API do GitHub. Este projeto foi minha primeira vez utilizando Tailwindcss."
+  },
+  "olobo": {
+    "shortDescription": "Meu portfólio pessoal",
+    "description": "## o que é \"{{name}}\"?\n\n\"{{name}}\" é o meu portifólio pessoal, que foi desenvolvido com **React**, **TypeScript**, **Tailwindcss**, **Shadcn/ui**, **Framer Motion**, **i18next** e **Vite**. Este projeto é meu primeiro projeto utilizando o Shadcn/ui."
+  },
+  "tempyrature": {
+    "shortDescription": "Biblioteca de conversão de temperatura em Python",
+    "description": "## O que é {{name}}?\n\n{{name}} é uma simples biblioteca de conversão de temperaturas em Python. Suporta **Celcius**, **Farhenheit**, **Kelvin** e **Rankine**.\n\n## Motivação\n\nA biblioteca foi criada para aprender sobre o **Pypi**, documentação com o **Sphinx** e testes com o **Pytest**."
+  },
+  "vexpy": {
+    "shortDescription": "Bot de Discord feito em Python",
+    "description": "## O que é {{name}}?\n\n{{name}} é um bot de Discord feito em Python usando a biblioteca [disnake](https://docs.disnake.dev/). O bot possui diversos comandos para diversão e entreterimento, como manipulação de imagens e eventos de roleplay, mas tambem possui algumas outras ferramentas, como criação de QR code, visualizar dados do servidor e usuários, e conversão de temperatura através de [outro projeto](/projects/tempyrature)."
+  }
+}

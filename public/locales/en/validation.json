@@ -1,0 +1,6 @@
+{
+  "shortSubjectContact": "The subject is too short.",
+  "bigSubjectContact": "The subject is too long.",
+  "shortBodyContact": "The e-mail body is too short.",
+  "bigBodyContact": "The e-mail body is too long."
+}
