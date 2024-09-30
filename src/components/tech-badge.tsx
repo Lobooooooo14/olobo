@@ -4,7 +4,7 @@ import { transparentize } from "polished"
 
 import { Badge } from "@/components/ui/badge"
 
-import { BadgeType } from "@/constants"
+import { BadgeType } from "@/content/projects"
 import { cn } from "@/lib/utils"
 
 interface TechBadgeProps

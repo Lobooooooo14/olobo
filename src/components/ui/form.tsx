@@ -7,6 +7,7 @@ import {
   FormProvider,
   useFormContext
 } from "react-hook-form"
+import { useTranslation } from "react-i18next"
 
 import * as LabelPrimitive from "@radix-ui/react-label"
 import { Slot } from "@radix-ui/react-slot"
@@ -147,7 +148,8 @@ const FormMessage = React.forwardRef<
   React.HTMLAttributes<HTMLParagraphElement>
 >(({ className, children, ...props }, ref) => {
   const { error, formMessageId } = useFormField()
-  const body = error ? String(error?.message) : children
+  const { t } = useTranslation("validation")
+  const body = error ? t(String(error?.message)) : children
 
   if (!body) {
     return null

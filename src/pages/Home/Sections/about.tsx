@@ -31,12 +31,12 @@ import { Separator } from "@/components/ui/separator"
 import { cn } from "@/lib/utils"
 
 export default function About() {
-  const { t } = useTranslation()
+  const { t } = useTranslation("pages/home")
 
   return (
     <section id="about" className="py-16">
       <div className="mb-6 flex w-full flex-col items-center">
-        <h2>{t("home.about.title")}</h2>
+        <h2>{t("about.title")}</h2>
         <Separator className="w-1/3" />
       </div>
 
@@ -45,10 +45,10 @@ export default function About() {
           {/* Begin */}
           <div className="col-span-4 col-start-1 row-span-1 row-start-1 flex flex-col justify-center p-4 sm:col-span-2 sm:row-span-2">
             <h3 className="text-center sm:text-left">
-              {t("home.about.begin.title")}
+              {t("about.begin.title")}
             </h3>
             <p className="text-center sm:text-left">
-              {t("home.about.begin.description")}
+              {t("about.begin.description")}
             </p>
           </div>
 
@@ -67,10 +67,10 @@ export default function About() {
           {/* Decision */}
           <div className="col-span-4 col-start-1 row-start-3 flex flex-col justify-center p-4 sm:col-span-2 sm:col-start-3 sm:row-span-2 sm:row-start-3 sm:items-end">
             <h3 className="text-center sm:text-left">
-              {t("home.about.decision.title")}
+              {t("about.decision.title")}
             </h3>
             <p className="text-center sm:text-right">
-              {t("home.about.decision.description")}
+              {t("about.decision.description")}
             </p>
           </div>
 
@@ -95,10 +95,10 @@ export default function About() {
           {/* progression */}
           <div className="col-span-4 col-start-1 row-start-5 flex flex-col justify-center p-4 sm:col-span-2 sm:col-start-1 sm:row-span-2 sm:row-start-6">
             <h3 className="text-center sm:text-left">
-              {t("home.about.progression.title")}
+              {t("about.progression.title")}
             </h3>
             <p className="text-center sm:text-left">
-              {t("home.about.progression.description")}
+              {t("about.progression.description")}
             </p>
           </div>
 

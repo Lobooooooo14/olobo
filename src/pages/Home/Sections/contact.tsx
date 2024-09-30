@@ -31,21 +31,21 @@ import { InlineCode } from "@/components/typography"
 const formSchema = z.object({
   subject: z
     .string()
-    .min(2, { message: "Por favor, insira um assunto" })
-    .max(50, { message: "Assunto muito grande" }),
+    .min(2, { message: "shortSubjectContact" })
+    .max(50, { message: "bigSubjectContact" }),
   body: z
     .string()
-    .min(2, { message: "Por favor, insira o corpo do email" })
-    .max(1000, { message: "Corpo muito grande" })
+    .min(2, { message: "shortBodyContact" })
+    .max(1000, { message: "bigBodyContact" })
 })
 
 export default function Contact() {
-  const { t } = useTranslation()
+  const { t } = useTranslation("pages/home")
 
   return (
     <section id="contact" className="min-h-screen py-16">
       <div className="mb-6 flex w-full flex-col items-center">
-        <h2>{t("home.contact.title")}</h2>
+        <h2>{t("contact.title")}</h2>
         <Separator className="w-1/3" />
       </div>
 
@@ -54,13 +54,14 @@ export default function Contact() {
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
               <MailIcon size={32} />
-              {t("home.contact.card.title")}
+              {t("contact.card.title")}
             </CardTitle>
             <CardDescription className="text-pretty leading-relaxed">
               <Trans
-                i18nKey="home.contact.card.description"
+                t={t}
+                i18nKey="contact.card.description"
                 values={{ email: "lobooooooo14@gmail.com" }}
-                components={[<InlineCode></InlineCode>]}
+                components={[<InlineCode />]}
               />
             </CardDescription>
           </CardHeader>
@@ -74,7 +75,7 @@ export default function Contact() {
 }
 
 function ContactForm() {
-  const { t } = useTranslation()
+  const { t } = useTranslation("pages/home")
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -98,15 +99,15 @@ function ContactForm() {
           name="subject"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>{t("home.contact.card.form.subject.label")}</FormLabel>
+              <FormLabel>{t("contact.card.form.subject.label")}</FormLabel>
               <FormControl>
                 <Input
-                  placeholder={t("home.contact.card.form.subject.placeholder")}
+                  placeholder={t("contact.card.form.subject.placeholder")}
                   {...field}
                 />
               </FormControl>
               <FormDescription>
-                {t("home.contact.card.form.subject.description")}
+                {t("contact.card.form.subject.description")}
               </FormDescription>
               <FormMessage />
             </FormItem>
@@ -117,23 +118,23 @@ function ContactForm() {
           name="body"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>{t("home.contact.card.form.body.label")}</FormLabel>
+              <FormLabel>{t("contact.card.form.body.label")}</FormLabel>
               <FormControl>
                 <Textarea
-                  placeholder={t("home.contact.card.form.body.placeholder")}
+                  placeholder={t("contact.card.form.body.placeholder")}
                   {...field}
                   className="h-48 resize-none"
                 />
               </FormControl>
               <FormDescription>
-                {t("home.contact.card.form.body.description")}
+                {t("contact.card.form.body.description")}
               </FormDescription>
               <FormMessage />
             </FormItem>
           )}
         />
         <Button className="w-full gap-2" type="submit">
-          {t("home.contact.card.form.send")} <ExternalLinkIcon size={16} />
+          {t("contact.card.form.send")} <ExternalLinkIcon size={16} />
         </Button>
       </form>
     </Form>

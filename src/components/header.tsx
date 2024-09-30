@@ -20,7 +20,15 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger
 } from "@/components/ui/dropdown-menu"
+import { Separator } from "@/components/ui/separator"
 import { SheetClose, SheetTrigger } from "@/components/ui/sheet"
+import {
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetHeader,
+  SheetTitle
+} from "@/components/ui/sheet"
 
 import { useTheme } from "@/components/theme-provider"
 
@@ -31,54 +39,62 @@ import i18n from "@/locale/i18n"
 export type LinksType = { id: number; name: string; route: string }[]
 
 export const linksNavItems: LinksType = [
-  { id: 1, name: "header.navbar.home", route: "/" },
-  { id: 2, name: "header.navbar.projects", route: "/projects" }
+  { id: 1, name: "navbar.home", route: "/" },
+  { id: 2, name: "navbar.projects", route: "/projects" }
 ]
 
 export default function Header() {
-  const { t } = useTranslation()
+  const { t } = useTranslation("common")
 
   return (
-    <motion.header
-      initial={{ opacity: 0, y: -60 }}
-      animate={{ opacity: 1, y: 0, transition: { delay: 1, duration: 0.4 } }}
-      className="sticky top-0 z-50 flex h-16 w-full items-center justify-between gap-4 border-border/40 bg-background/95 px-2 py-2 backdrop-blur supports-[backdrop-filter]:bg-background/60 sm:px-8"
-    >
-      <div className="flex items-center gap-4">
-        <a
-          href="/"
-          className="flex items-center gap-4 rounded-lg px-2 py-1 transition-colors hover:bg-primary/10"
-        >
-          <Avatar className="rounded-none rounded-br-sm">
-            <AvatarImage src={avatar} alt="Lobo Avatar" />
-            <AvatarFallback>L</AvatarFallback>
-          </Avatar>
+    <Sheet>
+      <SheetContent className="overflow-y-auto">
+        <SheetHeader className="hidden">
+          <SheetTitle />
+          <SheetDescription />
+        </SheetHeader>
+        <Navbar mobile className="my-4" />
+        <Separator />
+        <Buttons className="mt-4 gap-1" />
+      </SheetContent>
 
-          <span className="text-lg font-normal">{t("header.name")}</span>
-        </a>
-        <Navbar />
-      </div>
-      <div className="hidden items-center gap-4 sm:flex">
-        <ThemeToggle />
-        <LanguageToggle />
-        <Buttons />
-      </div>
-      <div className="flex items-center gap-4 sm:hidden">
-        <ThemeToggle />
-        <LanguageToggle />
-        <SheetTrigger asChild>
-          <Button variant="ghost" size="icon">
-            <MenuIcon size={24} />
-          </Button>
-        </SheetTrigger>
-      </div>
-    </motion.header>
+      <motion.header className="sticky top-0 z-50 flex h-16 w-full items-center justify-between gap-4 border-border/40 bg-background/95 px-2 py-2 backdrop-blur supports-[backdrop-filter]:bg-background/60 sm:px-8">
+        <div className="flex items-center gap-4">
+          <a
+            href="/"
+            className="flex items-center gap-4 rounded-lg px-2 py-1 transition-colors hover:bg-primary/10"
+          >
+            <Avatar className="rounded-none rounded-br-sm">
+              <AvatarImage src={avatar} alt="Lobo Avatar" />
+              <AvatarFallback>L</AvatarFallback>
+            </Avatar>
+
+            <span className="text-lg font-normal">{t("name")}</span>
+          </a>
+          <Navbar />
+        </div>
+        <div className="hidden items-center gap-4 sm:flex">
+          <ThemeToggle />
+          <LanguageToggle />
+          <Buttons />
+        </div>
+        <div className="flex items-center gap-4 sm:hidden">
+          <ThemeToggle />
+          <LanguageToggle />
+          <SheetTrigger asChild>
+            <Button variant="ghost" size="icon">
+              <MenuIcon size={24} />
+            </Button>
+          </SheetTrigger>
+        </div>
+      </motion.header>
+    </Sheet>
   )
 }
 
 function ThemeToggle() {
   const { setTheme } = useTheme()
-  const { t } = useTranslation()
+  const { t } = useTranslation("common")
 
   return (
     <DropdownMenu>
@@ -86,23 +102,23 @@ function ThemeToggle() {
         <Button variant="outline" size="icon">
           <SunIcon className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
           <MoonIcon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
-          <span className="sr-only">{t("header.theme.changeTheme")}</span>
+          <span className="sr-only">{t("theme.changeTheme")}</span>
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
         <DropdownMenuItem className="gap-2" onClick={() => setTheme("light")}>
           <SunIcon size={16} />
-          {t("header.theme.light")}
+          {t("theme.light")}
         </DropdownMenuItem>
 
         <DropdownMenuItem className="gap-2" onClick={() => setTheme("dark")}>
           <MoonIcon size={16} />
-          {t("header.theme.dark")}
+          {t("theme.dark")}
         </DropdownMenuItem>
 
         <DropdownMenuItem className="gap-2" onClick={() => setTheme("system")}>
           <MonitorIcon size={16} />
-          {t("header.theme.system")}
+          {t("theme.system")}
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
@@ -110,7 +126,7 @@ function ThemeToggle() {
 }
 
 function LanguageToggle() {
-  const { t } = useTranslation()
+  const { t } = useTranslation("common")
 
   const handleChangeLanguage = (language: string) => {
     i18n.changeLanguage(language)
@@ -121,25 +137,25 @@ function LanguageToggle() {
       <DropdownMenuTrigger asChild>
         <Button variant="outline" size="icon">
           <LanguagesIcon className="h-[1.2rem] w-[1.2rem] scale-100" />
-          <span className="sr-only">{t("header.language.changeLanguage")}</span>
+          <span className="sr-only">{t("language.changeLanguage")}</span>
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
         <Twemoji options={{ className: "m-1 w-5" }}>
           <DropdownMenuItem
             className="gap-2"
-            onClick={() => handleChangeLanguage("en-US")}
+            onClick={() => handleChangeLanguage("en")}
           >
             <span>🇺🇸</span>
-            {t("header.language.english")}
+            {t("language.english")}
           </DropdownMenuItem>
 
           <DropdownMenuItem
             className="gap-2"
-            onClick={() => handleChangeLanguage("pt-BR")}
+            onClick={() => handleChangeLanguage("pt")}
           >
             <span>🇧🇷</span>
-            {t("header.language.portuguese")}
+            {t("language.portuguese")}
           </DropdownMenuItem>
         </Twemoji>
       </DropdownMenuContent>
@@ -153,7 +169,7 @@ export interface NavbarProps extends React.HTMLAttributes<HTMLDivElement> {
 
 export function Navbar({ mobile = false, className, ...rest }: NavbarProps) {
   const navigate = useNavigate()
-  const { t } = useTranslation()
+  const { t } = useTranslation("common")
 
   return (
     <nav
