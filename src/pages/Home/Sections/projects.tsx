@@ -1,4 +1,4 @@
-import { HTMLAttributes, useEffect, useState } from "react"
+import { HTMLAttributes, useState } from "react"
 import { useTranslation } from "react-i18next"
 import { useMediaQuery } from "react-responsive"
 import { Link, redirect, useNavigate } from "react-router-dom"
@@ -17,33 +17,20 @@ import {
 } from "@/components/ui/carousel"
 import { Separator } from "@/components/ui/separator"
 
-import Loading from "@/components/loading"
 import ProjectCard from "@/components/project-card"
 import { useTheme } from "@/components/theme-provider"
 
+import projects from "@/content/projects"
 import { ProjectType } from "@/content/projects"
 
 export default function Projects() {
   const { t } = useTranslation("pages/home")
   const isMedium = useMediaQuery({ query: "(max-width: 768px)" })
 
-  const [topProjects, setTopProjects] = useState<ProjectType[] | null>(null)
-
-  useEffect(() => {
-    const loadAllProjects = async () => {
-      const projects = await import("@/content/projects")
-      const topProjects = Object.values(projects.default)
-        .flatMap(({ items }) => items)
-        .filter((project) => project.top)
-        .reverse()
-
-      setTopProjects(topProjects)
-    }
-
-    loadAllProjects()
-  }, [])
-
-  if (!topProjects) return <Loading expand />
+  const topProjects = Object.values(projects)
+    .flatMap(({ items }) => items)
+    .filter((project) => project.top)
+    .reverse()
 
   if (topProjects.length === 0) return
 
