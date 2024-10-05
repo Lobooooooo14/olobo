@@ -11,7 +11,7 @@ import {
   SiViteHex
 } from "@icons-pack/react-simple-icons"
 
-import BibliotecaPocketPoster from "@/assets/biblioteca-pocket/biblioteca-pocket-poster.png"
+import BibliotecaPocketPoster from "@/assets/biblioteca-pocket/biblioteca-pocket-poster.webp"
 import BibliotecaPocketVideo from "@/assets/biblioteca-pocket/biblioteca-pocket-video.mp4"
 
 import { ProjectType } from ".."

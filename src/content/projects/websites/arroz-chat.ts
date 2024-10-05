@@ -13,7 +13,7 @@ import {
   SiViteHex
 } from "@icons-pack/react-simple-icons"
 
-import ArrozChatPoster from "@/assets/arroz-chat/arroz-chat-poster.png"
+import ArrozChatPoster from "@/assets/arroz-chat/arroz-chat-poster.webp"
 
 import { ProjectType } from ".."
 

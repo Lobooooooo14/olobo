@@ -5,8 +5,8 @@ import {
   SiPythonHex
 } from "@icons-pack/react-simple-icons"
 
-import VexpyDarkPoster from "@/assets/vexpy/vexpy-dark-poster.png"
-import VexpyLightPoster from "@/assets/vexpy/vexpy-light-poster.png"
+import VexpyDarkPoster from "@/assets/vexpy/vexpy-dark-poster.webp"
+import VexpyLightPoster from "@/assets/vexpy/vexpy-light-poster.webp"
 
 import { ProjectType } from ".."
 
