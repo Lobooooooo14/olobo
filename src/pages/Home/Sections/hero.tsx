@@ -1,21 +1,12 @@
 import { useTranslation } from "react-i18next"
 
-import { motion } from "framer-motion"
-
 import waves from "@/assets/waves.svg"
 
 export default function Hero() {
   const { t } = useTranslation("pages/home")
 
   return (
-    <motion.section
-      initial={{ opacity: 0 }}
-      animate={{
-        opacity: 1,
-        transition: { duration: 1, ease: "anticipate" }
-      }}
-      className="relative h-[calc(100vh-64px)]"
-    >
+    <section className="relative h-[calc(100vh-64px)]">
       <div
         className="absolute -z-10 h-full w-full bg-primary/40"
         style={{
@@ -34,6 +25,6 @@ export default function Hero() {
           {t("hero.subtitle")}
         </p>
       </div>
-    </motion.section>
+    </section>
   )
 }

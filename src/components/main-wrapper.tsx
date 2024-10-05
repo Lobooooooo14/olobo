@@ -1,5 +1,7 @@
 import { useEffect } from "react"
 
+import { AnimatePresence, motion } from "framer-motion"
+
 import Footer from "@/components/footer"
 import Header from "@/components/header"
 import SmoothScroll from "@/components/smooth-scroll"
@@ -16,7 +18,15 @@ export default function MainWrapper({
   return (
     <SmoothScroll>
       <Header />
-      <main>{children}</main>
+      <AnimatePresence>
+        <motion.main
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1, transition: { duration: 0.5 } }}
+          exit={{ opacity: 0 }}
+        >
+          {children}
+        </motion.main>
+      </AnimatePresence>
       <Footer />
     </SmoothScroll>
   )

@@ -69,7 +69,7 @@ export default function ProjectCard({
 
         {/* Badges */}
         <div className="relative flex flex-nowrap gap-2 overflow-hidden">
-          <div className="absolute h-full w-full bg-gradient-to-l from-background to-transparent to-20%"></div>
+          <div className="pointer-events-none absolute h-full w-full bg-gradient-to-l from-background to-transparent to-20%"></div>
           {project.badges.map((badge) => (
             <TechBadge
               key={badge.name}

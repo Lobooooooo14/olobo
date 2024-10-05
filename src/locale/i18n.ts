@@ -12,6 +12,7 @@ i18n
     load: "languageOnly",
     fallbackLng: "en",
     supportedLngs: ["en", "pt"],
+    ns: ["common", "validation"],
     defaultNS: "common",
     debug: process.env.NODE_ENV === "production" ? false : true,
     interpolation: {
