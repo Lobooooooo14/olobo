@@ -13,9 +13,9 @@ import {
   SiViteHex
 } from "@icons-pack/react-simple-icons"
 
-import ShortStatsDarkPoster from "@/assets/short-stats/short-stats-dark-poster.png"
+import ShortStatsDarkPoster from "@/assets/short-stats/short-stats-dark-poster.webp"
 import ShortStatsDarkVideo from "@/assets/short-stats/short-stats-dark-video.mp4"
-import ShortStatsLightPoster from "@/assets/short-stats/short-stats-light-poster.png"
+import ShortStatsLightPoster from "@/assets/short-stats/short-stats-light-poster.webp"
 import ShortStatsLightVideo from "@/assets/short-stats/short-stats-light-video.mp4"
 
 import { ProjectType } from ".."

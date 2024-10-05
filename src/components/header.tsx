@@ -32,7 +32,7 @@ import {
 
 import { useTheme } from "@/components/theme-provider"
 
-import avatar from "@/assets/avatar.png"
+import avatar from "@/assets/avatar.webp"
 import { cn } from "@/lib/utils"
 import i18n from "@/locale/i18n"
 

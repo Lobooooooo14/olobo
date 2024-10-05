@@ -8,8 +8,8 @@ import {
   SiSphinx
 } from "@icons-pack/react-simple-icons"
 
-import TempyratureDarkPoster from "@/assets/tempyrature/tempyrature-dark-poster.png"
-import TempyratureLightPoster from "@/assets/tempyrature/tempyrature-light-poster.png"
+import TempyratureDarkPoster from "@/assets/tempyrature/tempyrature-dark-poster.webp"
+import TempyratureLightPoster from "@/assets/tempyrature/tempyrature-light-poster.webp"
 
 import { ProjectType } from ".."
 

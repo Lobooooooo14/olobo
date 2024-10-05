@@ -14,8 +14,8 @@ import {
   SiViteHex
 } from "@icons-pack/react-simple-icons"
 
-import OloboDarkPoster from "@/assets/olobo/olobo-dark-poster.png"
-import OloboLightPoster from "@/assets/olobo/olobo-light-poster.png"
+import OloboDarkPoster from "@/assets/olobo/olobo-dark-poster.webp"
+import OloboLightPoster from "@/assets/olobo/olobo-light-poster.webp"
 
 import { ProjectType } from ".."
 
