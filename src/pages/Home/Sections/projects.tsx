@@ -4,6 +4,7 @@ import { useMediaQuery } from "react-responsive"
 import { Link, redirect, useNavigate } from "react-router-dom"
 
 import { AspectRatio } from "@radix-ui/react-aspect-ratio"
+import Autoplay from "embla-carousel-autoplay"
 import { ExpandIcon, ExternalLinkIcon, TriangleAlertIcon } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
@@ -30,7 +31,6 @@ export default function Projects() {
   const topProjects = Object.values(projects)
     .flatMap(({ items }) => items)
     .filter((project) => project.top)
-    .reverse()
 
   if (topProjects.length === 0) return
 
@@ -48,6 +48,13 @@ export default function Projects() {
             loop: true,
             align: "center"
           }}
+          plugins={[
+            Autoplay({
+              delay: 4000,
+              stopOnInteraction: true,
+              stopOnMouseEnter: true
+            }) as any
+          ]}
         >
           <CarouselContent className="items-center">
             {topProjects.map((project) => (
