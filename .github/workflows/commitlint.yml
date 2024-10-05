@@ -10,11 +10,16 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - name: ⏭️ Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+        
       - name: Install Node.js
         uses: actions/setup-node@v4
         with:
           node-version-file: '.nvmrc'
+        
       - name: 🔍️ Print versions
         run: |
           git --version
