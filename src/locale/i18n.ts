@@ -11,6 +11,8 @@ i18n
   .init({
     load: "languageOnly",
     fallbackLng: "en",
+    supportedLngs: ["en", "pt"],
+    defaultNS: "common",
     debug: process.env.NODE_ENV === "production" ? false : true,
     interpolation: {
       escapeValue: false

@@ -1,0 +1,2 @@
+npm run prettier:fix
+git update-index --again
