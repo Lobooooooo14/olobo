@@ -1,4 +1,5 @@
 import { useTranslation } from "react-i18next"
+import Markdown from "react-markdown"
 
 import {
   SiArduinoHex,
@@ -29,12 +30,13 @@ import { transparentize } from "polished"
 import { Separator } from "@/components/ui/separator"
 
 import { cn } from "@/lib/utils"
+import { currentYearsOld } from "@/utils"
 
 export default function About() {
   const { t } = useTranslation("pages/home")
 
   return (
-    <section id="about" className="py-16">
+    <section id="about">
       <div className="mb-6 flex w-full flex-col items-center">
         <h2>{t("about.title")}</h2>
         <Separator className="w-1/3" />
@@ -42,13 +44,16 @@ export default function About() {
 
       <div className="flex justify-center">
         <div className="grid w-full grid-cols-4 grid-rows-7 gap-[0.3rem] px-[0.3rem] sm:max-w-screen-sm sm:grid-rows-8 sm:gap-0 sm:px-0 md:max-w-screen-md lg:max-w-screen-lg">
-          {/* Begin */}
           <div className="col-span-4 col-start-1 row-span-1 row-start-1 flex flex-col justify-center p-4 sm:col-span-2 sm:row-span-2">
             <h3 className="text-center sm:text-left">
               {t("about.begin.title")}
             </h3>
             <p className="text-center sm:text-left">
-              {t("about.begin.description")}
+              <Markdown>
+                {t("about.begin.description", {
+                  age: currentYearsOld(new Date("2006-07-02"))
+                })}
+              </Markdown>
             </p>
           </div>
 
@@ -64,13 +69,12 @@ export default function About() {
             className="col-span-2 col-start-3 sm:col-span-1 sm:col-start-3 sm:row-start-2"
           />
 
-          {/* Decision */}
           <div className="col-span-4 col-start-1 row-start-3 flex flex-col justify-center p-4 sm:col-span-2 sm:col-start-3 sm:row-span-2 sm:row-start-3 sm:items-end">
             <h3 className="text-center sm:text-left">
               {t("about.decision.title")}
             </h3>
             <p className="text-center sm:text-right">
-              {t("about.decision.description")}
+              <Markdown>{t("about.decision.description")}</Markdown>
             </p>
           </div>
 
@@ -92,13 +96,12 @@ export default function About() {
             className="col-span-2 col-start-2 row-start-4 sm:col-span-1 sm:col-start-1 sm:row-start-5"
           />
 
-          {/* progression */}
           <div className="col-span-4 col-start-1 row-start-5 flex flex-col justify-center p-4 sm:col-span-2 sm:col-start-1 sm:row-span-2 sm:row-start-6">
             <h3 className="text-center sm:text-left">
               {t("about.progression.title")}
             </h3>
             <p className="text-center sm:text-left">
-              {t("about.progression.description")}
+              <Markdown>{t("about.progression.description")}</Markdown>
             </p>
           </div>
 

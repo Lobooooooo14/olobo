@@ -43,7 +43,7 @@ export default function Contact() {
   const { t } = useTranslation("pages/home")
 
   return (
-    <section id="contact" className="min-h-screen py-16">
+    <section id="contact" className="min-h-screen">
       <div className="mb-6 flex w-full flex-col items-center">
         <h2>{t("contact.title")}</h2>
         <Separator className="w-1/3" />

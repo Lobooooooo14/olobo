@@ -6,16 +6,16 @@
   "about": {
     "title": "About",
     "begin": {
-      "title": "The beginning",
-      "description": "I had my first contact with programming in 2016, through Arduino, reading free e-books on the internet. Shortly afterwards, I decided to learn Python using just a cell phone."
+      "title": "Introduction",
+      "description": "Hello, my name is **Gabriel Lobo**, I am **{{age}} years old** and I'm a technology enthusiast. I discovered the world of programming in **2016** through **Arduino**, by reading free e-books online.\n\nShortly after, I became interested in **Python** and started learning it on my **phone**, since I didn't have a computer."
     },
     "decision": {
-      "title": "The decision",
-      "description": "I dedicated myself exclusively to Python for a long period, but I realized it was time to expand my knowledge. He was So I started studying HTML, CSS and JavaScript."
+      "title": "The triad",
+      "description": "I dedicated myself **exclusively** to Python for a long time, but I thought it was time to move on to **something new**. So I started learning **HTML**, **CSS**, and **JavaScript**, still on my **phone**."
     },
     "progression": {
-      "title": "The progression",
-      "description": "Since then, I have continued learning, focusing mainly on React framework, in addition to exploring other technologies."
+      "title": "Currently",
+      "description": "Since then, I **continue learning**, focusing mainly on the **React** framework, as well as **exploring** other technologies."
     }
   },
   "projects": {
