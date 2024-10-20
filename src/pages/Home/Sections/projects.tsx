@@ -35,7 +35,7 @@ export default function Projects() {
   if (topProjects.length === 0) return
 
   return (
-    <section id="projects" className="min-h-screen py-16">
+    <section id="projects" className="min-h-screen">
       <div className="mb-6 flex w-full flex-col items-center">
         <h2>{t("projects.title")}</h2>
         <Separator className="w-1/3" />

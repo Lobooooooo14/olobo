@@ -1,22 +1,21 @@
 {
   "hero": {
-    "pre-title": "Olá, eu sou Gabriel Lobo",
     "title": "Olá, eu sou Lobo",
     "subtitle": "Desenvolvedor Front-end"
   },
   "about": {
     "title": "Sobre",
     "begin": {
-      "title": "O começo",
-      "description": "Tive meu primeiro contato com programação em 2016, através do Arduino, lendo e-books gratuitos na internet. Pouco tempo depois, decidi aprender Python usando apenas um celular."
+      "title": "Introdução",
+      "description": "Olá, me chamo **Gabriel Lobo**, tenho **{{age}} anos** e sou um entusiasta de tecnologia. Conheci o mundo da programação em **2016**, através do **Arduino**, lendo e-books gratuitos na internet.\n\nPouco tempo depois, tive interesse por **Python**, e comecei a aprendê-lo pelo **celular**, já que eu não tinha um computador."
     },
     "decision": {
-      "title": "A decisão",
-      "description": "Me dediquei exclusivamente ao Python por um longo período, mas percebi que era hora de expandir meus conhecimentos. Então comecei a estudar HTML, CSS e JavaScript."
+      "title": "A tríade",
+      "description": "Me dediquei **exclusivamente** ao Python por um longo período, mas achei que já era hora de partir para **algo novo**. Então comecei a aprender **HTML**, **CSS** e **JavaScript**, ainda pelo **celular**."
     },
     "progression": {
-      "title": "A progressão",
-      "description": "Desde então, continuei aprendendo, focando principalmente no framework React, além de explorar outras tecnologias."
+      "title": "Atualmente",
+      "description": "Desde então, **continuo aprendendo**, focando principalmente no framework **React**, além de **explorar** outras tecnologias."
     }
   },
   "projects": {

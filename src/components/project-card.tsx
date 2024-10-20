@@ -62,10 +62,12 @@ export default function ProjectCard({
       </AspectRatio>
 
       <CardContent className="space-y-3 p-4">
-        <CardTitle>{project.title}</CardTitle>
-        <CardDescription>
-          {t(project.shortDescription, { ns: "projects" })}
-        </CardDescription>
+        <div className="text-center sm:text-left">
+          <CardTitle>{project.title}</CardTitle>
+          <CardDescription>
+            {t(project.shortDescription, { ns: "projects" })}
+          </CardDescription>
+        </div>
 
         {/* Badges */}
         <div className="relative flex flex-nowrap gap-2 overflow-hidden">

@@ -23,6 +23,7 @@ export default function MainWrapper({
           initial={{ opacity: 0 }}
           animate={{ opacity: 1, transition: { duration: 0.5 } }}
           exit={{ opacity: 0 }}
+          className="space-y-6 sm:space-y-12"
         >
           {children}
         </motion.main>
