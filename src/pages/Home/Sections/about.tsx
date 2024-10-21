@@ -43,7 +43,7 @@ export default function About() {
       </div>
 
       <div className="flex justify-center">
-        <div className="grid w-full grid-cols-4 grid-rows-7 gap-[0.3rem] px-[0.3rem] sm:max-w-screen-sm sm:grid-rows-8 sm:gap-0 sm:px-0 md:max-w-screen-md lg:max-w-screen-lg">
+        <div className="grid w-full grid-cols-4 gap-[0.3rem] px-[0.3rem] sm:max-w-screen-sm sm:grid-rows-8 sm:gap-0 sm:px-0 md:max-w-screen-md lg:max-w-screen-lg">
           <div className="col-span-4 col-start-1 row-span-1 row-start-1 flex flex-col justify-center p-4 sm:col-span-2 sm:row-span-2">
             <h3 className="text-center sm:text-left">
               {t("about.begin.title")}
@@ -120,19 +120,19 @@ export default function About() {
           <IconBox
             _icon={SiSass}
             color={SiSassHex}
-            className="col-start-1 row-start-7 sm:col-start-1 sm:row-start-8"
+            className="col-span-2 row-start-7 sm:col-start-1 sm:row-start-8"
           />
 
           <IconBox
             _icon={SiVite}
             color={SiViteHex}
-            className="col-span-2 row-start-7 sm:col-span-2 sm:col-start-3 sm:row-start-8"
+            className="col-span-2 col-start-3 row-start-7 sm:col-span-2 sm:col-start-3 sm:row-start-8"
           />
 
           <IconBox
             _icon={SiTailwindcss}
             color={SiTailwindcssHex}
-            className="col-start-4 row-start-7 sm:col-start-4 sm:row-start-8"
+            className="col-span-4 row-start-8 sm:col-start-4 sm:row-start-8"
           />
         </div>
       </div>
@@ -161,7 +161,7 @@ function IconBox({
       )}
       {...rest}
     >
-      <_icon color={color} size={64} />
+      <_icon color={color} className="h-12 w-12 sm:h-16 sm:w-16" />
     </motion.div>
   )
 }
