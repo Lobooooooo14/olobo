@@ -21,6 +21,9 @@ module.exports = {
         sans: ["Geist", "system-ui", "sans-serif"],
         mono: ["Geist Mono", "monospace"]
       },
+      screens: {
+        xs: "320px"
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",

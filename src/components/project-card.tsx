@@ -82,10 +82,10 @@ export default function ProjectCard({
           ))}
         </div>
 
-        <div className="flex justify-between gap-2">
+        <div className="flex flex-col justify-between gap-2 xs:flex-row">
           <Button
             variant="default"
-            className="w-full gap-2"
+            className="w-full flex-row-reverse gap-2 xs:flex-row"
             onClick={() => navigate(`/projects/${project.slug}`)}
           >
             <ExpandIcon size={22} />
