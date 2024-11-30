@@ -64,7 +64,7 @@ export default function ProjectCard({
       <CardContent className="space-y-3 p-4">
         <div className="text-center sm:text-left">
           <CardTitle>{project.title}</CardTitle>
-          <CardDescription>
+          <CardDescription className="overflow-x-hidden text-ellipsis text-nowrap">
             {t(project.shortDescription, { ns: "projects" })}
           </CardDescription>
         </div>
