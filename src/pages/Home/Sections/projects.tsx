@@ -1,11 +1,11 @@
-import { HTMLAttributes, useState } from "react"
+import { HTMLAttributes } from "react"
 import { useTranslation } from "react-i18next"
 import { useMediaQuery } from "react-responsive"
 import { Link, redirect, useNavigate } from "react-router-dom"
 
 import { AspectRatio } from "@radix-ui/react-aspect-ratio"
 import Autoplay from "embla-carousel-autoplay"
-import { ExpandIcon, ExternalLinkIcon, TriangleAlertIcon } from "lucide-react"
+import { ExpandIcon, ExternalLinkIcon } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
@@ -35,7 +35,7 @@ export default function Projects() {
   if (topProjects.length === 0) return
 
   return (
-    <section id="projects" className="min-h-screen">
+    <section id="projects" className="py-4">
       <div className="mb-6 flex w-full flex-col items-center">
         <h2>{t("projects.title")}</h2>
         <Separator className="w-1/3" />
@@ -98,10 +98,7 @@ function CustomProjectCard({
 }: { project: ProjectType } & HTMLAttributes<HTMLDivElement>) {
   const theme = useTheme()
   const { t } = useTranslation(["pages/home", "projects", "common"])
-  const isMedium = useMediaQuery({ query: "(max-width: 768px)" })
   const navigate = useNavigate()
-
-  const [disableReverseColors, setDisableReverseColors] = useState(false)
 
   return (
     <Card {...rest}>
@@ -119,14 +116,6 @@ function CustomProjectCard({
                 : (project.poster.light ?? project.poster.src)
             }
             className="h-full w-full rounded-lg rounded-t-lg object-cover transition-all"
-            style={{
-              filter:
-                project.invertColorsInTheme === theme.themeName &&
-                !disableReverseColors &&
-                !isMedium
-                  ? "invert(1)"
-                  : "invert(0)"
-            }}
             autoPlay
             loop
             muted
@@ -139,45 +128,16 @@ function CustomProjectCard({
                 ? (project.poster.dark ?? project.poster.src)
                 : (project.poster.light ?? project.poster.src)
             }
-            style={{
-              filter:
-                project.invertColorsInTheme === theme.themeName &&
-                !disableReverseColors &&
-                !isMedium
-                  ? "invert(1)"
-                  : "invert(0)"
-            }}
             className="h-full w-full rounded-lg object-cover transition-all"
           />
         )}
 
         {/* overlay */}
-        <div className="absolute inset-0 flex flex-col items-center justify-center rounded-lg bg-gradient-to-t from-white/80 to-white/20 opacity-0 backdrop-blur-md transition-opacity hover:opacity-100 dark:from-black/80 dark:to-black/20">
-          {/* Invert colors button */}
-          <div className="absolute right-1 top-1">
-            {project.invertColorsInTheme === theme.themeName && (
-              <Button
-                className="text-xs"
-                onClick={() => setDisableReverseColors(!disableReverseColors)}
-              >
-                <TriangleAlertIcon
-                  size={16}
-                  color="orange"
-                  className="my-[0.2rem] mr-1"
-                />
-                {t(
-                  !disableReverseColors
-                    ? "projects.card.invertColors"
-                    : "projects.card.originalColors"
-                )}
-              </Button>
-            )}
-          </div>
-
-          <h3 className="my-0 overflow-hidden text-ellipsis text-nowrap text-center">
+        <div className="absolute inset-0 flex flex-col items-center justify-center rounded-lg bg-gradient-to-t from-black/80 to-black/40 opacity-0 backdrop-blur-sm transition-opacity hover:opacity-100">
+          <h3 className="my-0 overflow-hidden text-ellipsis text-nowrap text-center text-white">
             {project.title}
           </h3>
-          <p className="overflow-hidden text-ellipsis text-nowrap text-center text-sm">
+          <p className="overflow-hidden text-ellipsis text-nowrap text-center text-sm text-white/80">
             {t(project.shortDescription, { ns: "projects" })}
           </p>
 
@@ -194,7 +154,7 @@ function CustomProjectCard({
 
             <Button
               variant="link"
-              className="gap-2"
+              className="gap-2 text-white"
               onClick={() => window.open(project.url, "_blank")}
             >
               {t("open", { ns: "common" })}
