@@ -22,5 +22,9 @@
   "vexpy": {
     "shortDescription": "Discord bot made in Python",
     "description": "## What is {{name}}?\n\n{{name}} is a Discord bot made in Python using the [disnake](https://docs.disnake.dev/) library. The bot has several commands for fun and entertainment, such as image manipulation and roleplay events, but it also has some other tools, such as QR code creation, viewing server and user data, and temperature conversion through [another project]( /projects/tempyrature)."
+  },
+  "nlwPocketInorbit": {
+    "shortDescription": "Full-stack project developed during the NLW Pocket JavaScript event from Rocketseat.",
+    "description": "## What is {{name}}?\n\n{{name}} was a project developed during Rocketseat's NLW Pocket JavaScript event. It is a To-Do list application where users can register and organize their daily and weekly goals."
   }
 }
