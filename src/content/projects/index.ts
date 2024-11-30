@@ -1,6 +1,7 @@
 import { IconType } from "@icons-pack/react-simple-icons"
 
 import python from "./python"
+import study from "./study"
 import websites from "./websites"
 
 type BadgeType = {
@@ -36,6 +37,7 @@ type ProjectsType = Record<string, { name: string; items: ProjectType[] }>
 const projects: ProjectsType = {
   websites: { name: "sections.websites", items: websites },
   python: { name: "sections.python", items: python },
+  study: { name: "sections.study", items: study },
   other: { name: "sections.other", items: [] }
 }
 
