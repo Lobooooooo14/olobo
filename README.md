@@ -7,7 +7,13 @@
 
 <hr>
 
-This project was built with React, TypeScript, TailwindCSS, Shadcn/ui and Vite.
+<div align="center">
+  <img src=".github/assets/hero.png" alt="Hero" width="300px">
+  <img src=".github/assets/triad.png" alt="Hero" width="300px">
+  <img src=".github/assets/projects.png" alt="Hero" width="300px">
+</div>
+
+<p align="center">This project was built with React, TypeScript, TailwindCSS, Shadcn/ui and Vite.</p>
 
 ## Running
 
