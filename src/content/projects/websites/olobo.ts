@@ -14,9 +14,6 @@ import {
   SiViteHex
 } from "@icons-pack/react-simple-icons"
 
-import OloboDarkPoster from "@/assets/olobo/olobo-dark-poster.webp"
-import OloboLightPoster from "@/assets/olobo/olobo-light-poster.webp"
-
 import { ProjectType } from ".."
 
 const oLobo: ProjectType = {
@@ -27,8 +24,8 @@ const oLobo: ProjectType = {
   github: "https://github.com/Lobooooooo14/olobo",
   url: "https://olobo.xyz",
   poster: {
-    dark: OloboDarkPoster,
-    light: OloboLightPoster
+    dark: "https://b-portifolio.olobo.xyz/olobo/olobo-dark-poster.webp",
+    light: "https://b-portifolio.olobo.xyz/olobo/olobo-light-poster.webp"
   },
   badges: [
     {

@@ -11,9 +11,6 @@ import {
   SiViteHex
 } from "@icons-pack/react-simple-icons"
 
-import BibliotecaPocketPoster from "@/assets/biblioteca-pocket/biblioteca-pocket-poster.webp"
-import BibliotecaPocketVideo from "@/assets/biblioteca-pocket/biblioteca-pocket-video.mp4"
-
 import { ProjectType } from ".."
 
 const bpocket: ProjectType = {
@@ -26,10 +23,10 @@ const bpocket: ProjectType = {
   invertColorsInTheme: "light",
   top: true,
   video: {
-    src: BibliotecaPocketVideo
+    src: "https://b-portifolio.olobo.xyz/biblioteca-pocket/biblioteca-pocket-video.mp4"
   },
   poster: {
-    src: BibliotecaPocketPoster
+    src: "https://b-portifolio.olobo.xyz/biblioteca-pocket/biblioteca-pocket-poster.webp"
   },
   badges: [
     {

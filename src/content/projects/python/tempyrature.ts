@@ -8,9 +8,6 @@ import {
   SiSphinx
 } from "@icons-pack/react-simple-icons"
 
-import TempyratureDarkPoster from "@/assets/tempyrature/tempyrature-dark-poster.webp"
-import TempyratureLightPoster from "@/assets/tempyrature/tempyrature-light-poster.webp"
-
 import { ProjectType } from ".."
 
 const tempyrature: ProjectType = {
@@ -21,8 +18,9 @@ const tempyrature: ProjectType = {
   url: "https://tempyrature.readthedocs.io/en/latest/",
   github: "https://github.com/Lobooooooo14/tempyrature",
   poster: {
-    dark: TempyratureDarkPoster,
-    light: TempyratureLightPoster
+    dark: "https://b-portifolio.olobo.xyz/tempyrature/tempyrature-dark-poster.webp",
+    light:
+      "https://b-portifolio.olobo.xyz/tempyrature/tempyrature-light-poster.webp"
   },
   badges: [
     {
