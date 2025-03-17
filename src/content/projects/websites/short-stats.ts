@@ -13,11 +13,6 @@ import {
   SiViteHex
 } from "@icons-pack/react-simple-icons"
 
-import ShortStatsDarkPoster from "@/assets/short-stats/short-stats-dark-poster.webp"
-import ShortStatsDarkVideo from "@/assets/short-stats/short-stats-dark-video.mp4"
-import ShortStatsLightPoster from "@/assets/short-stats/short-stats-light-poster.webp"
-import ShortStatsLightVideo from "@/assets/short-stats/short-stats-light-video.mp4"
-
 import { ProjectType } from ".."
 
 const shortStats: ProjectType = {
@@ -28,12 +23,14 @@ const shortStats: ProjectType = {
   url: "https://s.olobo.xyz/short",
   top: true,
   video: {
-    dark: ShortStatsDarkVideo,
-    light: ShortStatsLightVideo
+    dark: "https://b-portifolio.olobo.xyz/short-stats/short-stats-dark-video.mp4",
+    light:
+      "https://b-portifolio.olobo.xyz/short-stats/short-stats-light-video.mp4"
   },
   poster: {
-    dark: ShortStatsDarkPoster,
-    light: ShortStatsLightPoster
+    dark: "https://b-portifolio.olobo.xyz/short-stats/short-stats-dark-poster.webp",
+    light:
+      "https://b-portifolio.olobo.xyz/short-stats/short-stats-light-poster.webp"
   },
   badges: [
     {

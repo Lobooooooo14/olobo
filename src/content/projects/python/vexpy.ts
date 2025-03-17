@@ -5,9 +5,6 @@ import {
   SiPythonHex
 } from "@icons-pack/react-simple-icons"
 
-import VexpyDarkPoster from "@/assets/vexpy/vexpy-dark-poster.webp"
-import VexpyLightPoster from "@/assets/vexpy/vexpy-light-poster.webp"
-
 import { ProjectType } from ".."
 
 const vexpy: ProjectType = {
@@ -17,8 +14,8 @@ const vexpy: ProjectType = {
   description: "vexpy.description",
   github: "https://github.com/BotVex/Vex.py/",
   poster: {
-    dark: VexpyDarkPoster,
-    light: VexpyLightPoster
+    dark: "https://b-portifolio.olobo.xyz/vexpy/vexpy-dark-poster.webp",
+    light: "https://b-portifolio.olobo.xyz/vexpy/vexpy-light-poster.webp"
   },
   badges: [
     {

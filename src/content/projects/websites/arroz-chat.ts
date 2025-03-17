@@ -13,8 +13,6 @@ import {
   SiViteHex
 } from "@icons-pack/react-simple-icons"
 
-import ArrozChatPoster from "@/assets/arroz-chat/arroz-chat-poster.webp"
-
 import { ProjectType } from ".."
 
 const arrozChat: ProjectType = {
@@ -27,7 +25,7 @@ const arrozChat: ProjectType = {
   invertColorsInTheme: "light",
   top: true,
   poster: {
-    src: ArrozChatPoster
+    src: "https://b-portifolio.olobo.xyz/arroz-chat/arroz-chat-poster.webp"
   },
   badges: [
     {

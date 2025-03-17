@@ -12,8 +12,6 @@ import {
   SiViteHex
 } from "@icons-pack/react-simple-icons"
 
-import NLWPocketJavascriptInorbitPoster from "@/assets/nlw-pocket-inorbit/nlw-pocket-inorbit-poster.webp"
-
 import { ProjectType } from ".."
 
 const nlwPocketJavascriptInorbit: ProjectType = {
@@ -23,7 +21,7 @@ const nlwPocketJavascriptInorbit: ProjectType = {
   description: "nlwPocketInorbit.description",
   github: "https://github.com/Lobooooooo14/nlw-pocket-js-inorbit",
   poster: {
-    src: NLWPocketJavascriptInorbitPoster
+    src: "https://b-portifolio.olobo.xyz/nlw-pocket-inorbit/nlw-pocket-inorbit-poster.webp"
   },
   badges: [
     {
